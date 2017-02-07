@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-336 138.7 285.3 285.3" style="enable-background:new -336 138.7 285.3 285.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FF9700;stroke-width:0.5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FF9600;stroke-width:0.5;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FF9501;stroke-width:0.5;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FF9401;stroke-width:0.5;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#FF9302;stroke-width:0.5;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FF9202;stroke-width:0.5;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#FF9103;stroke-width:0.5;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#FF9003;stroke-width:0.5;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#FF8F03;stroke-width:0.5;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#FF8E04;stroke-width:0.5;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FF8D04;stroke-width:0.5;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#FF8C05;stroke-width:0.5;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FF8B05;stroke-width:0.5;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#FF8A06;stroke-width:0.5;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#FF8906;stroke-width:0.5;stroke-miterlimit:10;}
+	.st15{fill:none;stroke:#FF8807;stroke-width:0.5;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#FF8707;stroke-width:0.5;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#FF8607;stroke-width:0.5;stroke-miterlimit:10;}
+	.st18{fill:none;stroke:#FF8508;stroke-width:0.5;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#FF8408;stroke-width:0.5;stroke-miterlimit:10;}
+	.st20{fill:none;stroke:#FF8309;stroke-width:0.5;stroke-miterlimit:10;}
+	.st21{fill:none;stroke:#FF8209;stroke-width:0.5;stroke-miterlimit:10;}
+	.st22{fill:none;stroke:#FF810A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st23{fill:none;stroke:#FF800A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st24{fill:none;stroke:#FF7F0A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st25{fill:none;stroke:#FF7E0B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st26{fill:none;stroke:#FE7D0B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st27{fill:none;stroke:#FE7C0C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st28{fill:none;stroke:#FE7B0C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st29{fill:none;stroke:#FE7A0D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st30{fill:none;stroke:#FE790D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st31{fill:none;stroke:#FE780E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st32{fill:none;stroke:#FE770E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st33{fill:none;stroke:#FE760E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st34{fill:none;stroke:#FE750F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st35{fill:none;stroke:#FE740F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st36{fill:none;stroke:#FE7310;stroke-width:0.5;stroke-miterlimit:10;}
+	.st37{fill:none;stroke:#FE7210;stroke-width:0.5;stroke-miterlimit:10;}
+	.st38{fill:none;stroke:#FE7111;stroke-width:0.5;stroke-miterlimit:10;}
+	.st39{fill:none;stroke:#FE7011;stroke-width:0.5;stroke-miterlimit:10;}
+	.st40{fill:none;stroke:#FE6F11;stroke-width:0.5;stroke-miterlimit:10;}
+	.st41{fill:none;stroke:#FE6E12;stroke-width:0.5;stroke-miterlimit:10;}
+	.st42{fill:none;stroke:#FE6D12;stroke-width:0.5;stroke-miterlimit:10;}
+	.st43{fill:none;stroke:#FE6C13;stroke-width:0.5;stroke-miterlimit:10;}
+	.st44{fill:none;stroke:#FE6B13;stroke-width:0.5;stroke-miterlimit:10;}
+	.st45{fill:none;stroke:#FE6A14;stroke-width:0.5;stroke-miterlimit:10;}
+	.st46{fill:none;stroke:#FE6914;stroke-width:0.5;stroke-miterlimit:10;}
+	.st47{fill:none;stroke:#FE6815;stroke-width:0.5;stroke-miterlimit:10;}
+	.st48{fill:none;stroke:#FE6715;stroke-width:0.5;stroke-miterlimit:10;}
+	.st49{fill:none;stroke:#FE6615;stroke-width:0.5;stroke-miterlimit:10;}
+	.st50{fill:none;stroke:#FE6516;stroke-width:0.5;stroke-miterlimit:10;}
+	.st51{fill:none;stroke:#FE6416;stroke-width:0.5;stroke-miterlimit:10;}
+	.st52{fill:none;stroke:#FE6317;stroke-width:0.5;stroke-miterlimit:10;}
+	.st53{fill:none;stroke:#FE6217;stroke-width:0.5;stroke-miterlimit:10;}
+	.st54{fill:none;stroke:#FE6118;stroke-width:0.5;stroke-miterlimit:10;}
+	.st55{fill:none;stroke:#FE6018;stroke-width:0.5;stroke-miterlimit:10;}
+	.st56{fill:none;stroke:#FE5F18;stroke-width:0.5;stroke-miterlimit:10;}
+	.st57{fill:none;stroke:#FE5E19;stroke-width:0.5;stroke-miterlimit:10;}
+	.st58{fill:none;stroke:#FE5D19;stroke-width:0.5;stroke-miterlimit:10;}
+	.st59{fill:none;stroke:#FE5C1A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st60{fill:none;stroke:#FE5B1A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st61{fill:none;stroke:#FE5A1B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st62{fill:none;stroke:#FE591B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st63{fill:none;stroke:#FE581C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st64{fill:none;stroke:#FE571C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st65{fill:none;stroke:#FE561C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st66{fill:none;stroke:#FE551D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st67{fill:none;stroke:#FE541D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st68{fill:none;stroke:#FE531E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st69{fill:none;stroke:#FE521E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st70{fill:none;stroke:#FE511F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st71{fill:none;stroke:#FE501F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st72{fill:none;stroke:#FE4F1F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st73{fill:none;stroke:#FE4E20;stroke-width:0.5;stroke-miterlimit:10;}
+	.st74{fill:none;stroke:#FE4D20;stroke-width:0.5;stroke-miterlimit:10;}
+	.st75{fill:none;stroke:#FE4C21;stroke-width:0.5;stroke-miterlimit:10;}
+	.st76{fill:none;stroke:#FD4B21;stroke-width:0.5;stroke-miterlimit:10;}
+	.st77{fill:none;stroke:#FD4A22;stroke-width:0.5;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#FD4922;stroke-width:0.5;stroke-miterlimit:10;}
+	.st79{fill:none;stroke:#FD4823;stroke-width:0.5;stroke-miterlimit:10;}
+	.st80{fill:none;stroke:#FD4723;stroke-width:0.5;stroke-miterlimit:10;}
+	.st81{fill:none;stroke:#FD4623;stroke-width:0.5;stroke-miterlimit:10;}
+	.st82{fill:none;stroke:#FD4524;stroke-width:0.5;stroke-miterlimit:10;}
+	.st83{fill:none;stroke:#FD4424;stroke-width:0.5;stroke-miterlimit:10;}
+	.st84{fill:none;stroke:#FD4325;stroke-width:0.5;stroke-miterlimit:10;}
+	.st85{fill:none;stroke:#FD4225;stroke-width:0.5;stroke-miterlimit:10;}
+	.st86{fill:none;stroke:#FD4126;stroke-width:0.5;stroke-miterlimit:10;}
+	.st87{fill:none;stroke:#FD4026;stroke-width:0.5;stroke-miterlimit:10;}
+	.st88{fill:none;stroke:#FD3F26;stroke-width:0.5;stroke-miterlimit:10;}
+	.st89{fill:none;stroke:#FD3E27;stroke-width:0.5;stroke-miterlimit:10;}
+	.st90{fill:none;stroke:#FD3D27;stroke-width:0.5;stroke-miterlimit:10;}
+	.st91{fill:none;stroke:#FD3C28;stroke-width:0.5;stroke-miterlimit:10;}
+	.st92{fill:none;stroke:#FD3B28;stroke-width:0.5;stroke-miterlimit:10;}
+	.st93{fill:none;stroke:#FD3A29;stroke-width:0.5;stroke-miterlimit:10;}
+	.st94{fill:none;stroke:#FD3929;stroke-width:0.5;stroke-miterlimit:10;}
+	.st95{fill:none;stroke:#FD382A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st96{fill:none;stroke:#FD372A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st97{fill:none;stroke:#FD362A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st98{fill:none;stroke:#FD352B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st99{fill:none;stroke:#FD342B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st100{fill:none;stroke:#FD332C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st101{fill:none;stroke:#FD322C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st102{fill:none;stroke:#FD312D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st103{fill:none;stroke:#FD302D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st104{fill:none;stroke:#FD2F2D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st105{fill:none;stroke:#FD2E2E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st106{fill:none;stroke:#FD2D2E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st107{fill:none;stroke:#FD2C2F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st108{fill:none;stroke:#FD2B2F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st109{fill:none;stroke:#FD2A30;stroke-width:0.5;stroke-miterlimit:10;}
+	.st110{fill:none;stroke:#FD2930;stroke-width:0.5;stroke-miterlimit:10;}
+	.st111{fill:none;stroke:#FD2831;stroke-width:0.5;stroke-miterlimit:10;}
+	.st112{fill:none;stroke:#FD2731;stroke-width:0.5;stroke-miterlimit:10;}
+	.st113{fill:none;stroke:#FD2631;stroke-width:0.5;stroke-miterlimit:10;}
+	.st114{fill:none;stroke:#FD2532;stroke-width:0.5;stroke-miterlimit:10;}
+	.st115{fill:none;stroke:#FD2432;stroke-width:0.5;stroke-miterlimit:10;}
+	.st116{fill:none;stroke:#FD2333;stroke-width:0.5;stroke-miterlimit:10;}
+	.st117{fill:none;stroke:#FD2233;stroke-width:0.5;stroke-miterlimit:10;}
+	.st118{fill:none;stroke:#FD2134;stroke-width:0.5;stroke-miterlimit:10;}
+	.st119{fill:none;stroke:#FD2034;stroke-width:0.5;stroke-miterlimit:10;}
+	.st120{fill:none;stroke:#FD1F34;stroke-width:0.5;stroke-miterlimit:10;}
+	.st121{fill:none;stroke:#FD1E35;stroke-width:0.5;stroke-miterlimit:10;}
+	.st122{fill:none;stroke:#FD1D35;stroke-width:0.5;stroke-miterlimit:10;}
+	.st123{fill:none;stroke:#FD1C36;stroke-width:0.5;stroke-miterlimit:10;}
+	.st124{fill:none;stroke:#FD1B36;stroke-width:0.5;stroke-miterlimit:10;}
+	.st125{fill:none;stroke:#FD1A37;stroke-width:0.5;stroke-miterlimit:10;}
+	.st126{fill:none;stroke:#FC1937;stroke-width:0.5;stroke-miterlimit:10;}
+	.st127{fill:none;stroke:#FC1838;stroke-width:0.5;stroke-miterlimit:10;}
+	.st128{fill:none;stroke:#FC1738;stroke-width:0.5;stroke-miterlimit:10;}
+	.st129{fill:none;stroke:#FC1638;stroke-width:0.5;stroke-miterlimit:10;}
+	.st130{fill:none;stroke:#FC1539;stroke-width:0.5;stroke-miterlimit:10;}
+	.st131{fill:none;stroke:#FC1439;stroke-width:0.5;stroke-miterlimit:10;}
+	.st132{fill:none;stroke:#FC133A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st133{fill:none;stroke:#FC123A;stroke-width:0.5;stroke-miterlimit:10;}
+	.st134{fill:none;stroke:#FC113B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st135{fill:none;stroke:#FC103B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st136{fill:none;stroke:#FC0F3B;stroke-width:0.5;stroke-miterlimit:10;}
+	.st137{fill:none;stroke:#FC0E3C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st138{fill:none;stroke:#FC0D3C;stroke-width:0.5;stroke-miterlimit:10;}
+	.st139{fill:none;stroke:#FC0C3D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st140{fill:none;stroke:#FC0B3D;stroke-width:0.5;stroke-miterlimit:10;}
+	.st141{fill:none;stroke:#FC0A3E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st142{fill:none;stroke:#FC093E;stroke-width:0.5;stroke-miterlimit:10;}
+	.st143{fill:none;stroke:#FC083F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st144{fill:none;stroke:#FC073F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st145{fill:none;stroke:#FC063F;stroke-width:0.5;stroke-miterlimit:10;}
+	.st146{fill:none;stroke:#FC0540;stroke-width:0.5;stroke-miterlimit:10;}
+	.st147{fill:none;stroke:#FC0440;stroke-width:0.5;stroke-miterlimit:10;}
+	.st148{fill:none;stroke:#FC0341;stroke-width:0.5;stroke-miterlimit:10;}
+	.st149{fill:none;stroke:#FC0241;stroke-width:0.5;stroke-miterlimit:10;}
+	.st150{fill:none;stroke:#FC0142;stroke-width:0.5;stroke-miterlimit:10;}
+	.st151{fill:none;stroke:#FC0042;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="XMLID_1190_">
+	<ellipse id="XMLID_2_" class="st0" cx="-193.3" cy="281.4" rx="61.8" ry="142.4"/>
+	<ellipse id="XMLID_152_" class="st1" cx="-193.3" cy="281.4" rx="62.4" ry="141.9"/>
+	<ellipse id="XMLID_151_" class="st2" cx="-193.3" cy="281.4" rx="62.9" ry="141.4"/>
+	<ellipse id="XMLID_150_" class="st3" cx="-193.3" cy="281.4" rx="63.4" ry="140.8"/>
+	<ellipse id="XMLID_149_" class="st4" cx="-193.3" cy="281.4" rx="64" ry="140.3"/>
+	<ellipse id="XMLID_148_" class="st5" cx="-193.3" cy="281.4" rx="64.5" ry="139.8"/>
+	<ellipse id="XMLID_147_" class="st6" cx="-193.3" cy="281.4" rx="65" ry="139.2"/>
+	<ellipse id="XMLID_146_" class="st7" cx="-193.3" cy="281.4" rx="65.6" ry="138.7"/>
+	<ellipse id="XMLID_145_" class="st8" cx="-193.3" cy="281.4" rx="66.1" ry="138.2"/>
+	<ellipse id="XMLID_144_" class="st9" cx="-193.3" cy="281.4" rx="66.6" ry="137.6"/>
+	<ellipse id="XMLID_143_" class="st10" cx="-193.3" cy="281.4" rx="67.2" ry="137.1"/>
+	<ellipse id="XMLID_142_" class="st11" cx="-193.3" cy="281.4" rx="67.7" ry="136.6"/>
+	<ellipse id="XMLID_141_" class="st12" cx="-193.3" cy="281.4" rx="68.2" ry="136"/>
+	<ellipse id="XMLID_140_" class="st13" cx="-193.3" cy="281.4" rx="68.8" ry="135.5"/>
+	<ellipse id="XMLID_139_" class="st14" cx="-193.3" cy="281.4" rx="69.3" ry="135"/>
+	<ellipse id="XMLID_138_" class="st15" cx="-193.3" cy="281.4" rx="69.8" ry="134.4"/>
+	<ellipse id="XMLID_137_" class="st16" cx="-193.3" cy="281.4" rx="70.4" ry="133.9"/>
+	<ellipse id="XMLID_136_" class="st17" cx="-193.3" cy="281.4" rx="70.9" ry="133.3"/>
+	<ellipse id="XMLID_135_" class="st18" cx="-193.3" cy="281.4" rx="71.4" ry="132.8"/>
+	<ellipse id="XMLID_134_" class="st19" cx="-193.3" cy="281.4" rx="72" ry="132.3"/>
+	<ellipse id="XMLID_133_" class="st20" cx="-193.3" cy="281.4" rx="72.5" ry="131.7"/>
+	<ellipse id="XMLID_132_" class="st21" cx="-193.3" cy="281.4" rx="73" ry="131.2"/>
+	<ellipse id="XMLID_131_" class="st22" cx="-193.3" cy="281.4" rx="73.6" ry="130.7"/>
+	<ellipse id="XMLID_130_" class="st23" cx="-193.3" cy="281.4" rx="74.1" ry="130.1"/>
+	<ellipse id="XMLID_129_" class="st24" cx="-193.3" cy="281.4" rx="74.6" ry="129.6"/>
+	<ellipse id="XMLID_128_" class="st25" cx="-193.3" cy="281.4" rx="75.2" ry="129.1"/>
+	<ellipse id="XMLID_127_" class="st26" cx="-193.3" cy="281.4" rx="75.7" ry="128.5"/>
+	<ellipse id="XMLID_126_" class="st27" cx="-193.3" cy="281.4" rx="76.2" ry="128"/>
+	<ellipse id="XMLID_125_" class="st28" cx="-193.3" cy="281.4" rx="76.8" ry="127.5"/>
+	<ellipse id="XMLID_124_" class="st29" cx="-193.3" cy="281.4" rx="77.3" ry="126.9"/>
+	<ellipse id="XMLID_123_" class="st30" cx="-193.3" cy="281.4" rx="77.8" ry="126.4"/>
+	<ellipse id="XMLID_122_" class="st31" cx="-193.3" cy="281.4" rx="78.4" ry="125.9"/>
+	<ellipse id="XMLID_121_" class="st32" cx="-193.3" cy="281.4" rx="78.9" ry="125.3"/>
+	<ellipse id="XMLID_120_" class="st33" cx="-193.3" cy="281.4" rx="79.4" ry="124.8"/>
+	<ellipse id="XMLID_119_" class="st34" cx="-193.3" cy="281.4" rx="80" ry="124.3"/>
+	<ellipse id="XMLID_118_" class="st35" cx="-193.3" cy="281.4" rx="80.5" ry="123.7"/>
+	<ellipse id="XMLID_117_" class="st36" cx="-193.3" cy="281.4" rx="81" ry="123.2"/>
+	<ellipse id="XMLID_116_" class="st37" cx="-193.3" cy="281.4" rx="81.6" ry="122.7"/>
+	<ellipse id="XMLID_115_" class="st38" cx="-193.3" cy="281.4" rx="82.1" ry="122.1"/>
+	<ellipse id="XMLID_114_" class="st39" cx="-193.3" cy="281.4" rx="82.6" ry="121.6"/>
+	<ellipse id="XMLID_113_" class="st40" cx="-193.3" cy="281.4" rx="83.2" ry="121.1"/>
+	<ellipse id="XMLID_112_" class="st41" cx="-193.3" cy="281.4" rx="83.7" ry="120.5"/>
+	<ellipse id="XMLID_111_" class="st42" cx="-193.3" cy="281.4" rx="84.2" ry="120"/>
+	<ellipse id="XMLID_110_" class="st43" cx="-193.3" cy="281.4" rx="84.8" ry="119.5"/>
+	<ellipse id="XMLID_109_" class="st44" cx="-193.3" cy="281.4" rx="85.3" ry="118.9"/>
+	<ellipse id="XMLID_108_" class="st45" cx="-193.3" cy="281.4" rx="85.8" ry="118.4"/>
+	<ellipse id="XMLID_107_" class="st46" cx="-193.3" cy="281.4" rx="86.4" ry="117.9"/>
+	<ellipse id="XMLID_106_" class="st47" cx="-193.3" cy="281.4" rx="86.9" ry="117.3"/>
+	<ellipse id="XMLID_105_" class="st48" cx="-193.3" cy="281.4" rx="87.4" ry="116.8"/>
+	<ellipse id="XMLID_104_" class="st49" cx="-193.3" cy="281.4" rx="88" ry="116.3"/>
+	<ellipse id="XMLID_103_" class="st50" cx="-193.3" cy="281.4" rx="88.5" ry="115.7"/>
+	<ellipse id="XMLID_102_" class="st51" cx="-193.3" cy="281.4" rx="89" ry="115.2"/>
+	<ellipse id="XMLID_101_" class="st52" cx="-193.3" cy="281.4" rx="89.6" ry="114.7"/>
+	<ellipse id="XMLID_100_" class="st53" cx="-193.3" cy="281.4" rx="90.1" ry="114.1"/>
+	<ellipse id="XMLID_99_" class="st54" cx="-193.3" cy="281.4" rx="90.6" ry="113.6"/>
+	<ellipse id="XMLID_98_" class="st55" cx="-193.3" cy="281.4" rx="91.2" ry="113.1"/>
+	<ellipse id="XMLID_97_" class="st56" cx="-193.3" cy="281.4" rx="91.7" ry="112.5"/>
+	<ellipse id="XMLID_96_" class="st57" cx="-193.3" cy="281.4" rx="92.2" ry="112"/>
+	<ellipse id="XMLID_95_" class="st58" cx="-193.3" cy="281.4" rx="92.8" ry="111.5"/>
+	<ellipse id="XMLID_94_" class="st59" cx="-193.3" cy="281.4" rx="93.3" ry="110.9"/>
+	<ellipse id="XMLID_93_" class="st60" cx="-193.3" cy="281.4" rx="93.8" ry="110.4"/>
+	<ellipse id="XMLID_92_" class="st61" cx="-193.3" cy="281.4" rx="94.4" ry="109.9"/>
+	<ellipse id="XMLID_91_" class="st62" cx="-193.3" cy="281.4" rx="94.9" ry="109.3"/>
+	<ellipse id="XMLID_90_" class="st63" cx="-193.3" cy="281.4" rx="95.4" ry="108.8"/>
+	<ellipse id="XMLID_89_" class="st64" cx="-193.3" cy="281.4" rx="96" ry="108.3"/>
+	<ellipse id="XMLID_88_" class="st65" cx="-193.3" cy="281.4" rx="96.5" ry="107.7"/>
+	<ellipse id="XMLID_87_" class="st66" cx="-193.3" cy="281.4" rx="97" ry="107.2"/>
+	<ellipse id="XMLID_86_" class="st67" cx="-193.3" cy="281.4" rx="97.6" ry="106.7"/>
+	<ellipse id="XMLID_85_" class="st68" cx="-193.3" cy="281.4" rx="98.1" ry="106.1"/>
+	<ellipse id="XMLID_84_" class="st69" cx="-193.3" cy="281.4" rx="98.7" ry="105.6"/>
+	<ellipse id="XMLID_83_" class="st70" cx="-193.3" cy="281.4" rx="99.2" ry="105.1"/>
+	<ellipse id="XMLID_82_" class="st71" cx="-193.3" cy="281.4" rx="99.7" ry="104.5"/>
+	<ellipse id="XMLID_81_" class="st72" cx="-193.3" cy="281.4" rx="100.3" ry="104"/>
+	<ellipse id="XMLID_80_" class="st73" cx="-193.3" cy="281.4" rx="100.8" ry="103.5"/>
+	<ellipse id="XMLID_79_" class="st74" cx="-193.3" cy="281.4" rx="101.3" ry="102.9"/>
+	<ellipse id="XMLID_78_" class="st75" cx="-193.3" cy="281.4" rx="101.9" ry="102.4"/>
+	<ellipse id="XMLID_77_" class="st76" cx="-193.3" cy="281.4" rx="102.4" ry="101.9"/>
+	<ellipse id="XMLID_76_" class="st77" cx="-193.3" cy="281.4" rx="102.9" ry="101.3"/>
+	<ellipse id="XMLID_75_" class="st78" cx="-193.3" cy="281.4" rx="103.5" ry="100.8"/>
+	<ellipse id="XMLID_74_" class="st79" cx="-193.3" cy="281.4" rx="104" ry="100.3"/>
+	<ellipse id="XMLID_73_" class="st80" cx="-193.3" cy="281.4" rx="104.5" ry="99.7"/>
+	<ellipse id="XMLID_72_" class="st81" cx="-193.3" cy="281.4" rx="105.1" ry="99.2"/>
+	<ellipse id="XMLID_71_" class="st82" cx="-193.3" cy="281.4" rx="105.6" ry="98.7"/>
+	<ellipse id="XMLID_70_" class="st83" cx="-193.3" cy="281.4" rx="106.1" ry="98.1"/>
+	<ellipse id="XMLID_69_" class="st84" cx="-193.3" cy="281.4" rx="106.7" ry="97.6"/>
+	<ellipse id="XMLID_68_" class="st85" cx="-193.3" cy="281.4" rx="107.2" ry="97"/>
+	<ellipse id="XMLID_67_" class="st86" cx="-193.3" cy="281.4" rx="107.7" ry="96.5"/>
+	<ellipse id="XMLID_66_" class="st87" cx="-193.3" cy="281.4" rx="108.3" ry="96"/>
+	<ellipse id="XMLID_65_" class="st88" cx="-193.3" cy="281.4" rx="108.8" ry="95.4"/>
+	<ellipse id="XMLID_64_" class="st89" cx="-193.3" cy="281.4" rx="109.3" ry="94.9"/>
+	<ellipse id="XMLID_63_" class="st90" cx="-193.3" cy="281.4" rx="109.9" ry="94.4"/>
+	<ellipse id="XMLID_62_" class="st91" cx="-193.3" cy="281.4" rx="110.4" ry="93.8"/>
+	<ellipse id="XMLID_61_" class="st92" cx="-193.3" cy="281.4" rx="110.9" ry="93.3"/>
+	<ellipse id="XMLID_60_" class="st93" cx="-193.3" cy="281.4" rx="111.5" ry="92.8"/>
+	<ellipse id="XMLID_59_" class="st94" cx="-193.3" cy="281.4" rx="112" ry="92.2"/>
+	<ellipse id="XMLID_58_" class="st95" cx="-193.3" cy="281.4" rx="112.5" ry="91.7"/>
+	<ellipse id="XMLID_57_" class="st96" cx="-193.3" cy="281.4" rx="113.1" ry="91.2"/>
+	<ellipse id="XMLID_56_" class="st97" cx="-193.3" cy="281.4" rx="113.6" ry="90.6"/>
+	<ellipse id="XMLID_55_" class="st98" cx="-193.3" cy="281.4" rx="114.1" ry="90.1"/>
+	<ellipse id="XMLID_54_" class="st99" cx="-193.3" cy="281.4" rx="114.7" ry="89.6"/>
+	<ellipse id="XMLID_53_" class="st100" cx="-193.3" cy="281.4" rx="115.2" ry="89"/>
+	<ellipse id="XMLID_52_" class="st101" cx="-193.3" cy="281.4" rx="115.7" ry="88.5"/>
+	<ellipse id="XMLID_51_" class="st102" cx="-193.3" cy="281.4" rx="116.3" ry="88"/>
+	<ellipse id="XMLID_50_" class="st103" cx="-193.3" cy="281.4" rx="116.8" ry="87.4"/>
+	<ellipse id="XMLID_49_" class="st104" cx="-193.3" cy="281.4" rx="117.3" ry="86.9"/>
+	<ellipse id="XMLID_48_" class="st105" cx="-193.3" cy="281.4" rx="117.9" ry="86.4"/>
+	<ellipse id="XMLID_47_" class="st106" cx="-193.3" cy="281.4" rx="118.4" ry="85.8"/>
+	<ellipse id="XMLID_46_" class="st107" cx="-193.3" cy="281.4" rx="118.9" ry="85.3"/>
+	<ellipse id="XMLID_45_" class="st108" cx="-193.3" cy="281.4" rx="119.5" ry="84.8"/>
+	<ellipse id="XMLID_44_" class="st109" cx="-193.3" cy="281.4" rx="120" ry="84.2"/>
+	<ellipse id="XMLID_43_" class="st110" cx="-193.3" cy="281.4" rx="120.5" ry="83.7"/>
+	<ellipse id="XMLID_42_" class="st111" cx="-193.3" cy="281.4" rx="121.1" ry="83.2"/>
+	<ellipse id="XMLID_41_" class="st112" cx="-193.3" cy="281.4" rx="121.6" ry="82.6"/>
+	<ellipse id="XMLID_40_" class="st113" cx="-193.3" cy="281.4" rx="122.1" ry="82.1"/>
+	<ellipse id="XMLID_39_" class="st114" cx="-193.3" cy="281.4" rx="122.7" ry="81.6"/>
+	<ellipse id="XMLID_38_" class="st115" cx="-193.3" cy="281.4" rx="123.2" ry="81"/>
+	<ellipse id="XMLID_37_" class="st116" cx="-193.3" cy="281.4" rx="123.7" ry="80.5"/>
+	<ellipse id="XMLID_36_" class="st117" cx="-193.3" cy="281.4" rx="124.3" ry="80"/>
+	<ellipse id="XMLID_35_" class="st118" cx="-193.3" cy="281.4" rx="124.8" ry="79.4"/>
+	<ellipse id="XMLID_34_" class="st119" cx="-193.3" cy="281.4" rx="125.3" ry="78.9"/>
+	<ellipse id="XMLID_33_" class="st120" cx="-193.3" cy="281.4" rx="125.9" ry="78.4"/>
+	<ellipse id="XMLID_32_" class="st121" cx="-193.3" cy="281.4" rx="126.4" ry="77.8"/>
+	<ellipse id="XMLID_31_" class="st122" cx="-193.3" cy="281.4" rx="126.9" ry="77.3"/>
+	<ellipse id="XMLID_30_" class="st123" cx="-193.3" cy="281.4" rx="127.5" ry="76.8"/>
+	<ellipse id="XMLID_29_" class="st124" cx="-193.3" cy="281.4" rx="128" ry="76.2"/>
+	<ellipse id="XMLID_28_" class="st125" cx="-193.3" cy="281.4" rx="128.5" ry="75.7"/>
+	<ellipse id="XMLID_27_" class="st126" cx="-193.3" cy="281.4" rx="129.1" ry="75.2"/>
+	<ellipse id="XMLID_26_" class="st127" cx="-193.3" cy="281.4" rx="129.6" ry="74.6"/>
+	<ellipse id="XMLID_25_" class="st128" cx="-193.3" cy="281.4" rx="130.1" ry="74.1"/>
+	<ellipse id="XMLID_24_" class="st129" cx="-193.3" cy="281.4" rx="130.7" ry="73.6"/>
+	<ellipse id="XMLID_23_" class="st130" cx="-193.3" cy="281.4" rx="131.2" ry="73"/>
+	<ellipse id="XMLID_22_" class="st131" cx="-193.3" cy="281.4" rx="131.7" ry="72.5"/>
+	<ellipse id="XMLID_21_" class="st132" cx="-193.3" cy="281.4" rx="132.3" ry="72"/>
+	<ellipse id="XMLID_20_" class="st133" cx="-193.3" cy="281.4" rx="132.8" ry="71.4"/>
+	<ellipse id="XMLID_19_" class="st134" cx="-193.3" cy="281.4" rx="133.3" ry="70.9"/>
+	<ellipse id="XMLID_18_" class="st135" cx="-193.3" cy="281.4" rx="133.9" ry="70.4"/>
+	<ellipse id="XMLID_17_" class="st136" cx="-193.3" cy="281.4" rx="134.4" ry="69.8"/>
+	<ellipse id="XMLID_16_" class="st137" cx="-193.3" cy="281.4" rx="135" ry="69.3"/>
+	<ellipse id="XMLID_15_" class="st138" cx="-193.3" cy="281.4" rx="135.5" ry="68.8"/>
+	<ellipse id="XMLID_14_" class="st139" cx="-193.3" cy="281.4" rx="136" ry="68.2"/>
+	<ellipse id="XMLID_13_" class="st140" cx="-193.3" cy="281.4" rx="136.6" ry="67.7"/>
+	<ellipse id="XMLID_12_" class="st141" cx="-193.3" cy="281.4" rx="137.1" ry="67.2"/>
+	<ellipse id="XMLID_11_" class="st142" cx="-193.3" cy="281.4" rx="137.6" ry="66.6"/>
+	<ellipse id="XMLID_10_" class="st143" cx="-193.3" cy="281.4" rx="138.2" ry="66.1"/>
+	<ellipse id="XMLID_9_" class="st144" cx="-193.3" cy="281.4" rx="138.7" ry="65.6"/>
+	<ellipse id="XMLID_8_" class="st145" cx="-193.3" cy="281.4" rx="139.2" ry="65"/>
+	<ellipse id="XMLID_7_" class="st146" cx="-193.3" cy="281.4" rx="139.8" ry="64.5"/>
+	<ellipse id="XMLID_6_" class="st147" cx="-193.3" cy="281.4" rx="140.3" ry="64"/>
+	<ellipse id="XMLID_5_" class="st148" cx="-193.3" cy="281.4" rx="140.8" ry="63.4"/>
+	<ellipse id="XMLID_4_" class="st149" cx="-193.3" cy="281.4" rx="141.4" ry="62.9"/>
+	<ellipse id="XMLID_3_" class="st150" cx="-193.3" cy="281.4" rx="141.9" ry="62.4"/>
+	<ellipse id="XMLID_1_" class="st151" cx="-193.3" cy="281.4" rx="142.4" ry="61.8"/>
+</g>
+</svg>

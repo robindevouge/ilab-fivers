@@ -1,0 +1,128 @@
+@import url(normalize.css);
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+/* $mainDark: #3b3854; */
+$mainDark: #27293A;
+$secondaryDark: #894f87;
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+body{
+	font-family: "Quicksand";
+	padding-bottom: 200px;
+	overflow-x: hidden;
+}
+
+header, section{
+	padding: 0 5% 4.8rem 5%;
+}
+
+section{
+	padding: 0 5% 56% 5%;
+}
+
+.title{
+	line-height: 1.6rem;
+	margin-bottom: .4rem;
+	margin-top: 0;
+}
+
+.text{
+	line-height: 1.6rem;
+	margin: 0;
+	margin-bottom: 1.6rem;
+}
+
+header{
+	position: relative;
+	background: linear-gradient(135deg, $mainDark 0%,$secondaryDark 100%);
+	color: white;
+	margin-bottom: 8rem;
+
+	.header__img_container{
+		position: absolute;
+		width: 60%;
+		top: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 210px;
+
+		.product_img{
+			width: 100%;
+		}
+
+		.product_logo{
+			width: 70%;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	.header__title{
+		text-align: center;
+		font-weight: 500;
+		padding-top: 4.8rem;
+		font-size: 4rem;
+	}
+
+	.header__subtitle{
+		margin-top: 24.4rem;
+	}
+}
+
+section{
+	position: relative;
+
+	.animated_img{
+		width: 50%;
+		position: absolute;
+		transition: all 800ms cubic-bezier(.38,.65,.35,.93);
+	}
+
+	.img__left{
+		left: 0;
+		transform: translateX(-100%);
+	}
+
+	.img__right{
+		right: 0;
+		transform: translateX(100%);
+	}
+
+	.appear-left{
+		transform: translateX(0);
+	}
+
+	.appear-right{
+		transform: translateX(0);
+	}
+
+	.section__title{
+		background-color: white;
+		position: relative;
+		z-index: 10;
+		display: inline-block;
+		padding-right: 20px;
+	}
+
+	&:after{
+		z-index: 5;
+		content: "";
+		height: 1px;
+		width: 90%;
+		position: absolute;
+		top: .9rem;
+		right: 5%;
+		background-color: $secondaryDark;
+	}
+
+}

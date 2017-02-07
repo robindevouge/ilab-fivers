@@ -1,5 +1,3 @@
-// var hammertime = new Hammer(myElement, myOptions);
-
 var ft1 = document.querySelector('.feature--1'),
 	ft2 = document.querySelector('.feature--2'),
 	ft3 = document.querySelector('.feature--3'),
@@ -10,6 +8,8 @@ var ft1 = document.querySelector('.feature--1'),
 var sliderOffset = 0;
 
 function setSliderOffset(offset){
+
+	console.log("swipe");
 
 	sliderOffset += offset;
 
@@ -26,8 +26,9 @@ function setSliderOffset(offset){
 	sliderContainer.style.left = -sliderOffset + "vw";
 };
 
-var sliderInteraction = new Hammer(slider),
+var sliderInteraction = new Hammer.Manager(slider),
 	si = sliderInteraction;
+si.add( new Hammer.Swipe({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 10 }) );
 
 
 si.on('swipeleft', function() {

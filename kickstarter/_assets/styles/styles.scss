@@ -20,14 +20,6 @@ body{
 	overflow-x: hidden;
 }
 
-header, section{
-	padding: 0 5% 4.8rem 5%;
-}
-
-section{
-	padding: 0 5% 56% 5%;
-}
-
 .title{
 	line-height: 1.6rem;
 	margin-bottom: .4rem;
@@ -44,7 +36,21 @@ header{
 	position: relative;
 	background: linear-gradient(135deg, $mainDark 0%,$secondaryDark 100%);
 	color: white;
-	margin-bottom: 8rem;
+	margin-bottom: 6.2rem;
+	padding: 0 5% 4.8rem 5%;
+
+	&:after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-image: url("../images/separator.svg");
+		background-repeat: no-repeat;
+		background-size: 105%;
+		background-position: center 101%;
+	}
 
 	.header__img_container{
 		position: absolute;
@@ -81,6 +87,29 @@ header{
 
 section{
 	position: relative;
+	padding: 0 5% 70% 5%;
+
+	.section__title{
+		background-color: white;
+		position: relative;
+		z-index: 10;
+		display: inline-block;
+		padding-right: 20px;
+		color: $mainDark;
+		font-size: 2rem;
+		margin-bottom: 2.1rem;
+	}
+
+	&:after{
+		z-index: 5;
+		content: "";
+		height: 1px;
+		width: 90%;
+		position: absolute;
+		top: .9rem;
+		right: 5%;
+		background-color: $secondaryDark;
+	}
 
 	.animated_img{
 		width: 50%;
@@ -106,23 +135,73 @@ section{
 		transform: translateX(0);
 	}
 
-	.section__title{
-		background-color: white;
-		position: relative;
-		z-index: 10;
-		display: inline-block;
-		padding-right: 20px;
+}
+
+@media only screen and (min-width: 900px){
+
+	header{
+
+		&:after{
+			height: 200px;
+		}
+
+		.header__img_container{
+			left: 27%;
+			top: 5rem;
+			width: 25%;
+			max-width: 600px;
+		}
+
+		.header__title{
+			display: inline-block;
+			position: relative;
+			top: 8rem;
+			left: 52%;
+		}
+
+		.header__subtitle, .header__text{
+			width: 48%;
+			position: relative;
+			left: 52%;
+			top: -13.3rem;
+		}
 	}
 
-	&:after{
-		z-index: 5;
-		content: "";
-		height: 1px;
-		width: 90%;
-		position: absolute;
-		top: .9rem;
-		right: 5%;
-		background-color: $secondaryDark;
+	section{
+		padding: 0 5% 15.7rem 5%;
+
+		&:after{
+			display: none;
+		}
+
+		.section__title, .text{
+			width: 48%;
+			margin-left: 26%;
+			background-color: transparent;
+		}
+
+		.animated_img{
+			width: 22%;
+			position: absolute;
+			top: 0%;
+
+			&.img__right{
+				right: 5%;
+				transform: translateX(125%);
+			}
+			&.img__left{
+				left: 5%;
+				transform: translateX(-125%);
+			}
+
+			&.appear-left{
+				transform: translateX(0);
+			}
+
+			&.appear-right{
+				transform: translateX(0);
+			}
+		}
 	}
 
 }

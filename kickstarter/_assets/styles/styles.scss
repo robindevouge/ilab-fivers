@@ -36,7 +36,12 @@ body{
 	color: #232323;
 }
 
-h1, h2, h3, h4, p, img{
+p, a{
+	font-family: "filson-soft";
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, p, a, img{
 
 	&::selection{
 		background-color: $mainLight;
@@ -60,6 +65,8 @@ h1, h2, h3, h4, p, img{
 header{
 	position: relative;
 	background-color: $mainLight;
+	background-image: url("../images/egbg.svg");
+	background-size: cover;
 	background-attachment: fixed;
 	padding: 0 5% 4.8rem 5%;
 	box-shadow: 0px -5px 35px -5px rgba(50, 50, 50, .2) inset;
@@ -128,38 +135,10 @@ header{
 section{
 	position: relative;
 	z-index: 50;
-	padding: 0 5% 20.5rem 5%;
+	padding: 5.2rem 5% 13.2rem 5%;
+	margin-bottom: 16.5rem;
 	background-color: white;
 
-	&:first-of-type{
-		padding-top: 6.2rem;
-	}
-
-	&.infos{
-		height: 700px;
-		background-color: $mainLight;
-
-		&:before{
-			content: "";
-			position: absolute;
-			top: 0px;
-			left: 0;
-			width: 100%;
-			height: 100px;
-			background-image: url("../images/separator.svg");
-			background-repeat: no-repeat;
-			background-size: 105%;
-			background-position: center 105%;
-		}
-	}
-
-	.section__title{
-		text-align: center;
-		font-size: 2rem;
-		margin-bottom: 1.8rem;
-		padding-top: .3rem;
-		color: $secondaryDark;
-	}
 
 	.animated_img{
 		width: 50%;
@@ -183,6 +162,66 @@ section{
 
 	.appear-right{
 		transform: translateX(0);
+	}
+
+	&:first-of-type{
+		padding-top: 6.2rem;
+	}
+
+	&.order{
+		background-color: $mainLight;
+		margin-bottom: 0;
+		padding-bottom: 300px;
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 100%;
+			height: 100px;
+			background-image: url("../images/separator.svg");
+			background-repeat: no-repeat;
+			background-size: 105%;
+			background-position: center top;
+		}
+
+		.section__title{
+			color: $mainDark;
+			display: block;
+			margin: 0 auto;
+			width: 60%;
+			padding-top: 8.5rem;
+			text-align: center;
+		}
+
+		.order__button{
+			background-color: $secondaryDark;
+			position: relative;
+			left: 50%;
+			top: 4.2rem;
+			transform: translateX(-50%);
+			color: white;
+			display: inline-block;
+			padding: 1% 2%;
+			transition: all 300ms;
+
+			&:hover{
+				transform: translateX(-50%) scale(1.2);
+			}
+		}
+	}
+
+	.section__title{
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 1.8rem;
+		padding-top: .3rem;
+		color: $secondaryDark;
+	}
+
+	&.material{
+		margin-bottom: 0;
 	}
 
 }
@@ -231,7 +270,8 @@ section{
 	}
 
 	section{
-		padding: 0 5% 15.7rem 5%;
+		padding: 5.2rem 5% 5.2rem 5%;
+		margin-bottom: 16.5rem;
 
 		&:after{
 			display: none;
@@ -251,7 +291,7 @@ section{
 		.animated_img{
 			width: 22%;
 			position: absolute;
-			top: 0%;
+			top: 5rem;
 
 			&.img__right{
 				right: 5%;

@@ -134,3 +134,15 @@ if ( $(window).width() < 700) {
       offset: 300
     })
 };
+
+// Change product image with scroll
+
+var egg = document.getElementById('product');
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY < 700) {
+        egg.src = "_assets/images/egg.png";
+    } else if (window.scrollY > 700) {
+        egg.src = "_assets/images/egg-connected.png";
+    }
+});

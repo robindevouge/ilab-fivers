@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="49.4 388.1 693.2 61.2" style="enable-background:new 49.4 388.1 693.2 61.2;" xml:space="preserve">
+	 viewBox="-132 250.8 693.2 61.2" style="enable-background:new -132 250.8 693.2 61.2;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.22;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill:#FFFFFF;}
 </style>
-<g class="st0">
-	<image style="overflow:visible;" width="766" height="159" xlink:href="5D34C4AD.png"  transform="matrix(1 0 0 1 13 366.89)">
-	</image>
+<g>
+	<path class="st0" d="M561.2,306v-55.2H-132v55.1C-119.5,302.5,197.2,218.2,561.2,306z"/>
 </g>
-<path class="st1" d="M49,443.1c0,0,322.2-89.6,693.6,0c0,81.7,0,5.7,0,5.7H49V443.1z"/>
 </svg>

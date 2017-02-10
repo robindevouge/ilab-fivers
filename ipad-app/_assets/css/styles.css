@@ -1,8 +1,8 @@
 @import url( './reset.css');
 
 body {
-	width   : 100%;
-	height  : 100%;
+	width : 100%;
+	height: 100%;
 }
 
 .section {
@@ -46,44 +46,81 @@ body {
 	background: #ff9800;
 }
 
-.section--slider {
-	width: 100vw;
+.section--details {
+	width     : 100vw;
 	overflow-x: hidden;
-	/*position: fixed;
-	top: 0;
-	left: 0;*/
+	position  : fixed;
+	top       : 0;
+	left      : 0;
+	display   : none;
 }
 
-.slider__container {
-	width: 400vw;
-	height: 100%;
+.section--details.visible {
+	display: block;
+}
+
+.details__container {
+	width   : 400vw;
+	height  : 100%;
 	position: relative;
-	left: 0;
+	left    : 0;
 	/*z-index: -100;*/
-	transition: left .3s;
+	/*transition: left .3s;*/
 }
 
-.slider {
-
-	width : 100vw;
-	height: 100%;
-	float: left;
+.details__panel {
+	position  : absolute;
+	top       : 0;
+	width     : 100vw;
+	height    : 100%;
+	float     : left;
 	overflow-x: hidden;
-
 }
 
-.slider--1 {
+.details__panel--1 {
+	left      : 0;
 	background: #f44336;
+	/*background: red;*/
+	clip-path : circle(100px at 25% 25%);
 }
 
-.slider--2 {
+.details__panel--1.clip-full {
+	clip-path : circle(1200px at 25% 25%);
+	transition: clip-path .3s;
+}
+
+.details__panel--2 {
+	left      : 25%;
 	background: #2196f3;
+	/*background: blue;*/
+	clip-path : circle(100px at 75% 25%);
 }
 
-.slider--3 {
+.details__panel--2.clip-full {
+	clip-path : circle(1200px at 75% 25%);
+	transition: clip-path .3s;
+}
+
+.details__panel--3 {
+	left      : 50%;
 	background: #4caf50;
+	/*background: green;*/
+	clip-path : circle(100px at 25% 75%);
 }
 
-.slider--4 {
+.details__panel--3.clip-full {
+	clip-path : circle(1200px at 25% 75%);
+	transition: clip-path .3s;
+}
+
+.details__panel--4 {
+	left      : 75%;
 	background: #ff9800;
+	/*background: orange;*/
+	clip-path : circle(100px at 75% 75%);
+}
+
+.details__panel--4.clip-full {
+	clip-path : circle(1200px at 75% 75%);
+	transition: clip-path .3s;
 }

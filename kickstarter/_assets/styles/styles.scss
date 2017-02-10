@@ -1,9 +1,21 @@
 @import url(normalize.css);
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+//@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 
-/* $mainDark: #3b3854; */
 $mainDark: #27293A;
 $secondaryDark: #894f87;
+
+$mainLight: #ffbe32;
+
+@keyframes fadeinTop{
+	0%{
+		opacity: 0;
+		transform: translateX(-50%) translateY(-10%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+}
 
 .clearfix:after {
 	visibility: hidden;
@@ -14,10 +26,23 @@ $secondaryDark: #894f87;
 	height: 0;
 }
 
+html{
+	background-color: $mainLight;
+}
+
 body{
-	font-family: "Quicksand";
-	padding-bottom: 200px;
+	font-family: "azo-sans-web";
+	padding-bottom: 700px;
 	overflow-x: hidden;
+	color: #232323;
+}
+
+h1, h2, h3, h4, p, img{
+
+	&::selection{
+		background-color: $mainLight;
+		color: $mainDark;
+	}
 }
 
 .title{
@@ -30,85 +55,93 @@ body{
 	line-height: 1.6rem;
 	margin: 0;
 	margin-bottom: 1.6rem;
+	font-weight: 300;
 }
 
 header{
 	position: relative;
-	background: linear-gradient(135deg, $mainDark 0%,$secondaryDark 100%);
-	color: white;
-	margin-bottom: 6.2rem;
+	background-color: $mainLight;
+	background-attachment: fixed;
 	padding: 0 5% 4.8rem 5%;
+	box-shadow: 0px -5px 35px -5px rgba(50, 50, 50, .2) inset;
+	overflow: hidden;
 
 	&:after{
 		content: "";
 		position: absolute;
-		bottom: 0;
+		bottom: -1px;
 		left: 0;
 		width: 100%;
 		height: 100px;
-		background-image: url("../images/separator.svg");
+		background-image: url("../images/separator2.svg");
 		background-repeat: no-repeat;
 		background-size: 105%;
-		background-position: center 101%;
+		background-position: center 105%;
 	}
 
 	.header__img_container{
-		position: absolute;
-		width: 60%;
-		top: 20%;
+		position: fixed;
+		width: 80%;
+		max-width: 300px;
+		top: 3.5rem;
 		left: 50%;
-		transform: translateX(-50%);
-		max-width: 210px;
+		transform: translateX(-50%)translateY(-10%);
+		opacity: 0;	
+		animation: fadeinTop 500ms forwards;
 
 		.product_img{
 			width: 100%;
 		}
+	}
 
-		.product_logo{
-			width: 70%;
-			position: absolute;
-			bottom: -30px;
-			left: 50%;
-			transform: translateX(-50%);
-		}
+	.header__title, .header__subtitle, .header__text{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%) translateY(-10%);
+		text-align: center;
+		opacity: 0;	
+		animation: fadeinTop 500ms forwards 200ms;
 	}
 
 	.header__title{
 		text-align: center;
-		font-weight: 500;
-		padding-top: 4.8rem;
+		font-weight: 900;
+		padding-top: 6.4rem;
 		font-size: 4rem;
+		z-index: 15;
+		animation-delay: 400ms;
 	}
 
 	.header__subtitle{
-		margin-top: 24.4rem;
+		margin-top: 3.4rem;
+		font-size: 2rem;
+		line-height: 2.4rem;
+		animation-delay: 600ms;
+	}
+
+	.header__text{
+		font-size: 1.2rem;
+		margin-top: 2.4rem;
+		animation-delay: 800ms;
 	}
 }
 
 section{
 	position: relative;
-	padding: 0 5% 70% 5%;
+	z-index: 50;
+	padding: 0 5% 20.5rem 5%;
+	background-color: white;
 
-	.section__title{
-		background-color: white;
-		position: relative;
-		z-index: 10;
-		display: inline-block;
-		padding-right: 20px;
-		color: $mainDark;
-		font-size: 2rem;
-		margin-bottom: 2.1rem;
+	&:first-of-type{
+		padding-top: 6.2rem;
 	}
 
-	&:after{
-		z-index: 5;
-		content: "";
-		height: 1px;
-		width: 90%;
-		position: absolute;
-		top: .9rem;
-		right: 5%;
-		background-color: $secondaryDark;
+	.section__title{
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 1.8rem;
+		padding-top: .3rem;
+		color: $secondaryDark;
 	}
 
 	.animated_img{
@@ -139,31 +172,44 @@ section{
 
 @media only screen and (min-width: 900px){
 
+	.text{
+		font-size: 1rem;
+	}
+
 	header{
+		padding: 0 5% 16rem 5%;
 
 		&:after{
 			height: 200px;
 		}
 
 		.header__img_container{
-			left: 27%;
-			top: 5rem;
-			width: 25%;
+			left: 50%;
+			top: 5.5rem;
+			width: 30%;
+			min-width: 380px;
 			max-width: 600px;
 		}
 
-		.header__title{
-			display: inline-block;
-			position: relative;
-			top: 8rem;
-			left: 52%;
+		.header__title, .header__subtitle, .header__text{
+			width: 48%;
 		}
 
-		.header__subtitle, .header__text{
-			width: 48%;
-			position: relative;
-			left: 52%;
-			top: -13.3rem;
+		.header__title{
+			font-size: 5rem;
+			padding-top: 12.2rem;
+		}
+
+		.header__subtitle{
+			font-size: 3rem;
+			line-height: 3.2rem;
+			margin-top: 3.4rem;
+		}
+
+		.header__text{
+			font-size: 1.5rem;
+			line-height: 1.6rem;
+			margin-top: 1.5rem;
 		}
 	}
 
@@ -175,9 +221,14 @@ section{
 		}
 
 		.section__title, .text{
-			width: 48%;
-			margin-left: 26%;
+			width: 38.2%;
 			background-color: transparent;
+		}
+
+		.section__title{
+			text-align: left;
+			font-size: 3rem;
+			line-height: 3.2rem;
 		}
 
 		.animated_img{
@@ -187,21 +238,60 @@ section{
 
 			&.img__right{
 				right: 5%;
-				transform: translateX(125%);
+				transform: translateX(50%);
+				opacity: 0;
 			}
 			&.img__left{
 				left: 5%;
-				transform: translateX(-125%);
+				transform: translateX(-50%);
+				opacity: 0;
 			}
 
 			&.appear-left{
 				transform: translateX(0);
+				opacity: 1;
 			}
 
 			&.appear-right{
-				transform: translateX(0);
+				transform: translateX(13%);
+				opacity: 1;
+			}
+		}
+
+		&.intro{
+
+			.section__title{
+				width: 30.9%;
+				margin-left: 10.3%;
+				float: left;
+			}
+
+			.text{
+				margin-left: 51.5%;
+				margin-top: 1.8rem;
+			}
+		}
+
+		&.connect, &.touch, &.material{
+
+			.section__title, .text{
+				margin-left: 10.3%;
+			}
+
+			.img__left{
+				left: 60%;
+			}
+		}
+
+		&.use, &.heat{
+
+			.section__title, .text{
+				margin-left: 51.5%;
+			}
+
+			.img__right{
+				right: 60%;
 			}
 		}
 	}
-
 }

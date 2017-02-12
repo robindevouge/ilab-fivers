@@ -27,6 +27,7 @@ features[0].addEventListener('click', function() {
 	setTimeout(function() {
 		clipFull();
 		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[1].addEventListener('click', function() {
@@ -35,6 +36,7 @@ features[1].addEventListener('click', function() {
 	setTimeout(function() {
 		clipFull();
 		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[2].addEventListener('click', function() {
@@ -43,6 +45,7 @@ features[2].addEventListener('click', function() {
 	setTimeout(function() {
 		clipFull();
 		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[3].addEventListener('click', function() {

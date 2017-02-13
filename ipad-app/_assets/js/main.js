@@ -4,6 +4,7 @@ var features = document.querySelectorAll('.feature'),
 	ft3 = document.querySelector('.feature--3'),
 	ft4 = document.querySelector('.feature--4'),
 	slider = document.querySelector('.section--details'),
+	sliderClose = document.querySelector('.details__close'),
 	sliderContainer = document.querySelector('.details__container'),
 	panels = document.querySelectorAll('.details__panel');
 
@@ -14,34 +15,56 @@ function clipFull() {
 		panels[i].classList.add('clip-full')
 	}
 };
+function removeClip() {
+	for(var i = 0; i < panels.length; i++) {
+		panels[i].classList.remove('clip-full')
+	}
+};
 
 features[0].addEventListener('click', function() {
 	setSliderOffset('set', 0);
-	slider.classList.add('visible');
+	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
 		clipFull();
+		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[1].addEventListener('click', function() {
 	setSliderOffset("set", 1);
-	slider.classList.add('visible');
+	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
 		clipFull();
+		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[2].addEventListener('click', function() {
 	setSliderOffset("set", 2);
-	slider.classList.add('visible');
+	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
 		clipFull();
+		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[3].addEventListener('click', function() {
 	setSliderOffset("set", 3);
-	slider.classList.add('visible');
+	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
 		clipFull();
+		window.scrollTo(0,document.body.scrollHeight);
+		document.body.style.overflow = "hidden";
 	}, 1);
+});
+
+sliderClose.addEventListener('click', function(){
+	slider.classList.add('transparent');
+	document.body.style.overflow = "auto";
+	setTimeout(function() {
+		removeClip();
+		slider.classList.add('inexistent');
+	}, 300);
 });
 
 

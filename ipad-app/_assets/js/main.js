@@ -6,18 +6,24 @@ var features = document.querySelectorAll('.feature'),
 	slider = document.querySelector('.section--details'),
 	sliderClose = document.querySelector('.details__close'),
 	sliderContainer = document.querySelector('.details__container'),
-	panels = document.querySelectorAll('.details__panel');
+	panels = document.querySelectorAll('.details__panel'),
+	panelsBackground = document.querySelectorAll('.panel__background');
+	panelsContent = document.querySelectorAll('.panel__content');
+
+console.log(panelsContent);
 
 // feature touch
 
-function clipFull() {
+function spread() {
 	for(var i = 0; i < panels.length; i++) {
-		panels[i].classList.add('clip-full')
+		panelsBackground[i].classList.add('spread');
+		panelsContent[i].classList.add('appear');
 	}
 };
-function removeClip() {
+function shrink() {
 	for(var i = 0; i < panels.length; i++) {
-		panels[i].classList.remove('clip-full')
+		panelsBackground[i].classList.remove('spread')
+		panelsContent[i].classList.remove('appear')
 	}
 };
 
@@ -25,34 +31,35 @@ features[0].addEventListener('click', function() {
 	setSliderOffset('set', 0);
 	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
-		clipFull();
+		spread();
 		window.scrollTo(0,document.body.scrollHeight);
 		document.body.style.overflow = "hidden";
+
 	}, 1);
 });
 features[1].addEventListener('click', function() {
-	setSliderOffset("set", 1);
+	setSliderOffset('set', 1);
 	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
-		clipFull();
+		spread();
 		window.scrollTo(0,document.body.scrollHeight);
 		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[2].addEventListener('click', function() {
-	setSliderOffset("set", 2);
+	setSliderOffset('set', 2);
 	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
-		clipFull();
+		spread();
 		window.scrollTo(0,document.body.scrollHeight);
 		document.body.style.overflow = "hidden";
 	}, 1);
 });
 features[3].addEventListener('click', function() {
-	setSliderOffset("set", 3);
+	setSliderOffset('set', 3);
 	slider.classList.remove('inexistent','transparent');
 	setTimeout(function() {
-		clipFull();
+		spread();
 		window.scrollTo(0,document.body.scrollHeight);
 		document.body.style.overflow = "hidden";
 	}, 1);
@@ -60,9 +67,9 @@ features[3].addEventListener('click', function() {
 
 sliderClose.addEventListener('click', function(){
 	slider.classList.add('transparent');
-	document.body.style.overflow = "auto";
+	document.body.style.overflow = 'auto';
 	setTimeout(function() {
-		removeClip();
+		shrink();
 		slider.classList.add('inexistent');
 	}, 300);
 });
@@ -74,11 +81,11 @@ var sliderOffset = 0;
 function setSliderOffset(action, offset) {
 
 	switch(action) {
-		case "set":
+		case 'set':
 			sliderOffset = offset;
 			sliderContainer.style.transition = "none";
 			break;
-		case "increment":
+		case 'increment':
 			sliderOffset += offset;
 
 			switch(sliderOffset) {
@@ -89,11 +96,11 @@ function setSliderOffset(action, offset) {
 					sliderOffset = 3;
 					break;
 			}
-			sliderContainer.style.transition = "left .3s";
+			sliderContainer.style.transition = 'left .3s';
 			break;
 	}
 
-	sliderContainer.style.left = -100 * sliderOffset + "vw";
+	sliderContainer.style.left = -100 * sliderOffset + 'vw';
 };
 
 
@@ -107,8 +114,8 @@ si.add(new Hammer.Swipe({
 
 
 si.on('swipeleft', function() {
-	setSliderOffset("increment", 1);
+	setSliderOffset('increment', 1);
 });
 si.on('swiperight', function() {
-	setSliderOffset("increment", -1);
+	setSliderOffset('increment', -1);
 });

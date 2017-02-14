@@ -34,6 +34,8 @@ body{
 	font-family: "azo-sans-web";
 	overflow-x: hidden;
 	color: #232323;
+	max-width: 1600px;
+	margin: 0 auto;
 }
 
 p, a{
@@ -64,31 +66,16 @@ h1, h2, h3, h4, p, a, img{
 
 header{
 	position: relative;
-	background-color: $mainLight;
-	background-image: url("../images/egbg.svg");
-	background-size: cover;
-	background-attachment: fixed;
 	padding: 0 5% 4.8rem 5%;
-	box-shadow: 0px -5px 35px -5px rgba(50, 50, 50, .2) inset;
 	overflow: hidden;
-
-	&:after{
-		content: "";
-		position: absolute;
-		bottom: -1px;
-		left: 0;
-		width: 100%;
-		height: 100px;
-		background-image: url("../images/separator2.svg");
-		background-repeat: no-repeat;
-		background-size: 105%;
-		background-position: center 105%;
-	}
+	background-image: url("../images/separator_01.svg");
+	background-repeat: no-repeat;
+	background-position: center bottom;
 
 	.header__img_container{
-		position: fixed;
 		width: 80%;
 		max-width: 300px;
+		position: absolute;
 		top: 3.5rem;
 		left: 50%;
 		transform: translateX(-50%)translateY(-10%);
@@ -112,8 +99,8 @@ header{
 	.header__title{
 		text-align: center;
 		font-weight: 900;
-		padding-top: 6.4rem;
 		font-size: 4rem;
+		padding-top: 6.4rem;
 		z-index: 15;
 		animation-delay: 400ms;
 	}
@@ -126,8 +113,8 @@ header{
 	}
 
 	.header__text{
-		font-size: 1.2rem;
 		margin-top: 2.4rem;
+		font-size: 1.2rem;
 		animation-delay: 800ms;
 	}
 }
@@ -135,64 +122,78 @@ header{
 section{
 	position: relative;
 	z-index: 50;
-	padding: 5.2rem 5% 13.2rem 5%;
-	margin-bottom: 16.5rem;
+	padding: 5.2rem 5% 5.2rem 5%;
 	background-color: white;
 
-
 	.animated_img{
-		width: 50%;
-		position: absolute;
+		max-width: 100%;
 		transition: all 800ms cubic-bezier(.38,.65,.35,.93);
-	}
-
-	.img__left{
-		left: 0;
-		transform: translateX(-100%);
-	}
-
-	.img__right{
-		right: 0;
-		transform: translateX(100%);
-	}
-
-	.appear-left{
-		transform: translateX(0);
-	}
-
-	.appear-right{
-		transform: translateX(0);
 	}
 
 	&:first-of-type{
 		padding-top: 6.2rem;
 	}
 
+	&.intro{
+
+		.animated_img{
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&.connect{
+		background-color: transparent;
+		background-image: url("../images/separator_02.svg");
+		background-position: center -2px;
+		background-repeat: no-repeat;
+		padding: 12rem 0 0 0;
+
+		.connect1{
+			padding: 0 5% 0 5%;
+
+			.animated_img{
+				margin-top: 3.2rem;
+				margin-bottom: 3.2rem;
+				width: 50%;
+				float: left;
+			}
+		}
+
+		.connect2{
+			@extend .connect1;
+			padding-bottom: 7rem;
+			background-image: url("../images/separator_03.svg");
+			background-position: center 101%;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&.features{
+		padding-top: 13.6rem;
+		background-color: transparent;
+		background-image: url("../images/separator_04-05.svg");
+		background-position: center -2px;
+		background-repeat: no-repeat;
+
+		.text{
+			margin-bottom: 6.4rem;
+		}
+	}
+
 	&.order{
-		background-color: $mainLight;
 		margin-bottom: 0;
 		padding-bottom: 300px;
-
-		&:before{
-			content: "";
-			position: absolute;
-			top: 0px;
-			left: 0;
-			width: 100%;
-			height: 100px;
-			background-image: url("../images/separator.svg");
-			background-repeat: no-repeat;
-			background-size: 105%;
-			background-position: center top;
-		}
 
 		.section__title{
 			color: $mainDark;
 			display: block;
 			margin: 0 auto;
-			width: 60%;
+			width: 100%;
 			padding-top: 8.5rem;
 			text-align: center;
+			line-height: 2.4rem;
 		}
 
 		.order__button{
@@ -203,21 +204,18 @@ section{
 			transform: translateX(-50%);
 			color: white;
 			display: inline-block;
-			padding: 1% 2%;
+			padding: 4% 6%;
 			transition: all 300ms;
-
-			&:hover{
-				transform: translateX(-50%) scale(1.2);
-			}
+			font-size: 1.2rem;
 		}
 	}
 
 	.section__title{
-		text-align: center;
 		font-size: 2rem;
 		margin-bottom: 1.8rem;
 		padding-top: .3rem;
 		color: $secondaryDark;
+		z-index: 5;
 	}
 
 	&.material{
@@ -234,10 +232,6 @@ section{
 
 	header{
 		padding: 0 5% 16rem 5%;
-
-		&:after{
-			height: 200px;
-		}
 
 		.header__img_container{
 			left: 50%;
@@ -271,15 +265,10 @@ section{
 
 	section{
 		padding: 5.2rem 5% 5.2rem 5%;
-		margin-bottom: 16.5rem;
-
-		&:after{
-			display: none;
-		}
 
 		.section__title, .text{
 			width: 38.2%;
-			background-color: transparent;
+			position: relative;
 		}
 
 		.section__title{
@@ -288,66 +277,92 @@ section{
 			line-height: 3.2rem;
 		}
 
-		.animated_img{
-			width: 22%;
-			position: absolute;
-			top: 5rem;
-
-			&.img__right{
-				right: 5%;
-				transform: translateX(50%);
-				opacity: 0;
-			}
-			&.img__left{
-				left: 5%;
-				transform: translateX(-50%);
-				opacity: 0;
-			}
-
-			&.appear-left{
-				transform: translateX(0);
-				opacity: 1;
-			}
-
-			&.appear-right{
-				transform: translateX(13%);
-				opacity: 1;
-			}
-		}
-
 		&.intro{
 
+			.section__title, .text{
+				width: 40.2%;
+				margin-left: 10.3%;
+			}
+
+			.animated_img{
+				width: 40%;
+				position: absolute;
+				left: 80%;
+				top: 6rem;
+			}
+		}
+
+		&.connect{
+			.section__title, .text{
+				width: 38.2%;
+				margin-left: 30.9%;
+			}
+
+			.connect1{
+
+				.animated_img{
+					width: 40%;
+
+					&:first-of-type{
+						margin-left: 10%;
+					}
+				}
+			}
+
+			.connect2{
+				padding-bottom: 20.3rem;
+			}
+		}
+
+		&.use{
+
+			.section__title, .text{
+				margin-left: 51.5%;
+			}
+
+			.animated_img{
+				width: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		&.features{
+			.section__title, .text{
+				z-index: 10;
+			}
+
+			#touch, #touch + .text{
+				margin-left: 61.8%;
+			}
+
+			#material, #material + .text{
+				margin-left: 51.5%;
+			}
+
+			.animated_img{
+				width: 60%;
+				position: absolute;
+				left: 50%;
+				top: 25%;
+				transform: translateX(-50%);
+				z-index: 1;
+			}
+		}
+
+		&.order{
 			.section__title{
-				width: 30.9%;
-				margin-left: 10.3%;
-				float: left;
+				width: 60%;
+				line-height: 3.2rem;
 			}
 
-			.text{
-				margin-left: 51.5%;
-				margin-top: 1.8rem;
-			}
-		}
+			.order__button{
+				padding: 1% 2%;
 
-		&.connect, &.touch, &.material{
-
-			.section__title, .text{
-				margin-left: 10.3%;
-			}
-
-			.img__left{
-				left: 60%;
-			}
-		}
-
-		&.use, &.heat{
-
-			.section__title, .text{
-				margin-left: 51.5%;
-			}
-
-			.img__right{
-				right: 60%;
+				&:hover{
+					transform: translateX(-50%) scale(1.2);
+				}
 			}
 		}
 	}

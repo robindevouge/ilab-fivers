@@ -137,9 +137,10 @@ section {
       color: #27293A;
       display: block;
       margin: 0 auto;
-      width: 60%;
+      width: 100%;
       padding-top: 8.5rem;
-      text-align: center; }
+      text-align: center;
+      line-height: 2.4rem; }
     section.order .order__button {
       background-color: #894f87;
       position: relative;
@@ -148,16 +149,15 @@ section {
       transform: translateX(-50%);
       color: white;
       display: inline-block;
-      padding: 1% 2%;
-      transition: all 300ms; }
-      section.order .order__button:hover {
-        transform: translateX(-50%) scale(1.2); }
+      padding: 4% 6%;
+      transition: all 300ms;
+      font-size: 1.2rem; }
   section .section__title {
-    text-align: center;
     font-size: 2rem;
     margin-bottom: 1.8rem;
     padding-top: .3rem;
-    color: #894f87; }
+    color: #894f87;
+    z-index: 5; }
   section.material {
     margin-bottom: 0; }
 
@@ -196,7 +196,8 @@ section {
       display: none; }
     section .section__title, section .text {
       width: 38.2%;
-      background-color: transparent; }
+      background-color: transparent;
+      position: relative; }
     section .section__title {
       text-align: left;
       font-size: 3rem;
@@ -233,6 +234,13 @@ section {
     section.use .section__title, section.use .text, section.heat .section__title, section.heat .text {
       margin-left: 51.5%; }
     section.use .img__right, section.heat .img__right {
-      right: 60%; } }
+      right: 60%; }
+    section.order .section__title {
+      width: 60%;
+      line-height: 3.2rem; }
+    section.order .order__button {
+      padding: 1% 2%; }
+      section.order .order__button:hover {
+        transform: translateX(-50%) scale(1.2); } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -13,8 +13,14 @@ var features = document.querySelectorAll('.feature'),
 	panelsContent = document.querySelectorAll('.panel__content'),
 	hands = document.querySelectorAll('.hand'),
 	paf = document.querySelector('.paf'),
-	ovoTexMove = document.querySelector('.ovo--moveable'),
-	ovoTexStatic = document.querySelector('.ovo--static');
+	ovoTexMove = document.querySelector('.texture__ovo--moveable'),
+	ovoTexStatic = document.querySelector('.texture__ovo--static')
+	ovo = {
+		touch : {
+			left : document.querySelector('.touch__ovo--left'),
+			right : document.querySelector('.touch__ovo--right')
+		}
+	};
 
 // feature touch
 
@@ -81,7 +87,7 @@ sliderClose.addEventListener('click', function() {
 
 
 // REMOVE LATER
-setSliderOffset('set',1);
+setSliderOffset('set',2);
 
 
 
@@ -206,6 +212,21 @@ draggable.on('dragEnd', function(){
 	}else{
 		ovoTexStatic.style.background = 'bisque';
 	}
+})
+
+// touch
+
+ovo.touch.left.addEventListener('touchstart', function(){
+	ovo.touch.right.classList.add('wiggle');
+})
+ovo.touch.left.addEventListener('touchend', function(){
+	ovo.touch.right.classList.remove('wiggle');
+})
+ovo.touch.right.addEventListener('touchstart', function(){
+	ovo.touch.left.classList.add('wiggle');
+})
+ovo.touch.right.addEventListener('touchend', function(){
+	ovo.touch.left.classList.remove('wiggle');
 })
 
 var timer = 0;

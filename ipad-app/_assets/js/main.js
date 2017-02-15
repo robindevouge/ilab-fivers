@@ -10,7 +10,8 @@ var features = document.querySelectorAll('.feature'),
 	panelsBackground = document.querySelectorAll('.panel__background'),
 	panelsContent = document.querySelectorAll('.panel__content'),
 	hands = document.querySelectorAll('.hand'),
-	paf = document.querySelector('.paf');
+	paf = document.querySelector('.paf'),
+	ovoTex = document.querySelector('.ovo--moveable');
 
 // feature touch
 
@@ -74,6 +75,10 @@ sliderClose.addEventListener('click', function() {
 		slider.classList.add('inexistent');
 	}, 300);
 });
+
+
+// REMOVE LATER
+setSliderOffset('set',1);
 
 
 
@@ -162,6 +167,28 @@ hri.on('panend', function() {
 		loop: false
 	});
 });
+
+// var textureInteraction = new Hammer.Manager(ovoTex),
+// 	ti = textureInteraction;
+// ti.add(new Hammer.Pan({
+// 	direction: Hammer.DIRECTION_ALL,
+// 	threshold: 1,
+// 	pointers: 1
+// }))
+// ti.on('pan', function(e){
+// 	var rect = ovoTex.getBoundingClientRect(),
+// 		mouseX = e.srcEvent.clientX,
+// 		mouseY = e.srcEvent.clientY,
+// 		offsetX = mouseX - rect.left,
+// 		offsetY = mouseY - rect.top,
+// 		posX = e.srcEvent.clientX,
+// 		posY = e.srcEvent.clientY;
+// 	ovoTex.style.left = posX+'px';
+// 	ovoTex.style.top = posY+'px';
+// 	// ovoTex.style.transform = 'translate(-'+offsetX+',-'+offsetY+')';
+// })
+
+var draggable = new Draggabilly(ovoTex);
 
 var timer = 0;
 var currentTime,

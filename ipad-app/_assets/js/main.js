@@ -16,9 +16,19 @@ var features = document.querySelectorAll('.feature'),
 	ovoTexMove = document.querySelector('.texture__ovo--moveable'),
 	ovoTexStatic = document.querySelector('.texture__ovo--static')
 	ovo = {
+		texture : {
+			move : document.querySelector('.texture__ovo--moveable'),
+			static : document.querySelector('.texture__ovo--static')
+		},
 		touch : {
 			left : document.querySelector('.touch__ovo--left'),
 			right : document.querySelector('.touch__ovo--right')
+		},
+		warming : {
+			left : document.querySelector('.warming__ovo--left'),
+			right : document.querySelector('.warming__ovo--right'),
+			heatLeft : document.querySelector('.warming__heat--left'),
+			heatRight : document.querySelector('.warming__heat--right')
 		}
 	};
 
@@ -87,7 +97,7 @@ sliderClose.addEventListener('click', function() {
 
 
 // REMOVE LATER
-setSliderOffset('set',2);
+setSliderOffset('set',3);
 
 
 
@@ -229,6 +239,44 @@ ovo.touch.right.addEventListener('touchend', function(){
 	ovo.touch.left.classList.remove('wiggle');
 })
 
+// warming
+
+var warmLeftInteraction = new Hammer.Manager(ovo.warming.left);
+warmLeftInteraction.add(new Hammer.Pan({
+	direction: Hammer.DIRECTION_ALL,
+	threshold: 1,
+	pointers: 1
+}))
+var warmRightInteraction = new Hammer.Manager(ovo.warming.right);
+warmRightInteraction.add(new Hammer.Pan({
+	direction: Hammer.DIRECTION_ALL,
+	threshold: 1,
+	pointers: 1
+}))
+var heat = {
+	left : 0,
+	right : 0
+}
+warmRightInteraction.on('pan', function(){
+	if(heat.left < 1){
+		heat.left += 0.008;
+		ovo.warming.heatRight.style.opacity = heat.left;
+	}
+})
+warmLeftInteraction.on('pan', function(){
+	if(heat.right < 1){
+		heat.right += 0.008;
+		ovo.warming.heatLeft.style.opacity = heat.right;
+	}
+})
+
+function colden(){
+	heat.left -= 0.003
+	heat.right -= 0.003
+	ovo.warming.heatRight.style.opacity = heat.right;
+	ovo.warming.heatLeft.style.opacity = heat.left;
+}
+
 var timer = 0;
 var currentTime,
 	last = 0,
@@ -238,6 +286,7 @@ function clock() {
 	currentTime = new Date().getTime();
 	// do things
 	collisionTimer(1.5);
+	colden();
 	lastTime = currentTime;
 
 	requestAnimationFrame(clock);

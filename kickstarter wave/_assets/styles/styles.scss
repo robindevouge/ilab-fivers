@@ -35,6 +35,10 @@ body{
 	font-family: "azo-sans-web";
 	overflow-x: hidden;
 	color: $mainDark;
+	margin: 0 auto;
+}
+
+.container{
 	max-width: 2000px;
 	margin: 0 auto;
 }
@@ -104,6 +108,11 @@ header{
 		padding-top: 6.4rem;
 		z-index: 15;
 		animation-delay: 400ms;
+		text-indent: -9999px;
+		background-image: url("../images/logo.png");
+		background-size: 70%;
+		background-position: center bottom;
+		background-repeat: no-repeat;
 	}
 
 	.header__subtitle{
@@ -279,6 +288,7 @@ section{
 		.header__title{
 			font-size: 5rem;
 			padding-top: 12.2rem;
+			background-size: 50%;
 		}
 
 		.header__subtitle{
@@ -300,6 +310,10 @@ section{
 		// .animated_img{
 		// 	max-width: 400px;
 		// }
+
+		.animated_img{
+			max-width: 600px;
+		}
 
 		.section__title, .text{
 			width: 38.2%;
@@ -456,6 +470,48 @@ section{
 		&.features{
 			padding-top: 20%;
 			padding-bottom: 15%;
+		}
+	}
+}
+
+@media only screen and (min-width: 1700px){
+	header{
+
+		.header__title{
+			padding-top: 20%;
+		}
+
+		.header__text{
+			max-width: 600px;
+		}
+
+		.header__img_container{
+			top: 10%;
+		}
+	}
+
+	section{
+
+		#cont{
+			width: 100%;
+		}
+
+		&.intro{
+
+			.animated_img{
+				right: 15%;
+			}
+		}
+
+		&.use{
+
+			.animated_img:first-of-type{
+				left: 20%;
+			}
+
+			.animated_img:last-of-type{
+				right: 20%;
+			}
 		}
 	}
 }

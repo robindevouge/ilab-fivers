@@ -1,3 +1,5 @@
+// 1366 * 1024
+
 var features = document.querySelectorAll('.feature'),
 	ft1 = document.querySelector('.feature--1'),
 	ft2 = document.querySelector('.feature--2'),
@@ -11,7 +13,8 @@ var features = document.querySelectorAll('.feature'),
 	panelsContent = document.querySelectorAll('.panel__content'),
 	hands = document.querySelectorAll('.hand'),
 	paf = document.querySelector('.paf'),
-	ovoTex = document.querySelector('.ovo--moveable');
+	ovoTexMove = document.querySelector('.ovo--moveable'),
+	ovoTexStatic = document.querySelector('.ovo--static');
 
 // feature touch
 
@@ -168,27 +171,42 @@ hri.on('panend', function() {
 	});
 });
 
-// var textureInteraction = new Hammer.Manager(ovoTex),
-// 	ti = textureInteraction;
-// ti.add(new Hammer.Pan({
-// 	direction: Hammer.DIRECTION_ALL,
-// 	threshold: 1,
-// 	pointers: 1
-// }))
-// ti.on('pan', function(e){
-// 	var rect = ovoTex.getBoundingClientRect(),
-// 		mouseX = e.srcEvent.clientX,
-// 		mouseY = e.srcEvent.clientY,
-// 		offsetX = mouseX - rect.left,
-// 		offsetY = mouseY - rect.top,
-// 		posX = e.srcEvent.clientX,
-// 		posY = e.srcEvent.clientY;
-// 	ovoTex.style.left = posX+'px';
-// 	ovoTex.style.top = posY+'px';
-// 	// ovoTex.style.transform = 'translate(-'+offsetX+',-'+offsetY+')';
-// })
 
-var draggable = new Draggabilly(ovoTex);
+var draggable = new Draggabilly(ovoTexMove,{
+
+});
+
+draggable.on('pointerDown', function(){
+	// ovoTexMove.style.transform = 'scale(1.5)';
+	ovoTexMove.classList.add('scaleUp');
+});
+// draggable.on('dragMove', function(){
+// 	ovoTexMove.style.transform = 'scale(1.5)';
+// });
+
+draggable.on('dragEnd', function(){
+	var endPointX = draggable.position.x + ovoTexMove.clientWidth/2,
+		endPointY = draggable.position.y + ovoTexMove.clientHeight/2;
+	// console.log(endPointY);
+	console.log(window.innerHeight - window.innerWidth/4);
+	if (endPointY > window.innerHeight - window.innerWidth/4) {
+		if(endPointX > window.innerWidth*0.75){
+			ovoTexStatic.style.background = 'green';
+		}else{
+			if(endPointX > window.innerWidth/2){
+				ovoTexStatic.style.background = 'blue';
+			}else{
+				if(endPointX > window.innerWidth*0.25){
+					ovoTexStatic.style.background = 'red';
+				}else{
+					ovoTexStatic.style.background = 'bisque';
+				}
+			}
+		}
+	}else{
+		ovoTexStatic.style.background = 'bisque';
+	}
+})
 
 var timer = 0;
 var currentTime,

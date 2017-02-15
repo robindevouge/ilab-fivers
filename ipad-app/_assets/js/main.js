@@ -1,6 +1,56 @@
 // 1366 * 1024
 
-var features = document.querySelectorAll('.feature'),
+var interactions = {
+		bump: {
+			ovo: {
+				left: document.querySelector('.bump__ovo--left'),
+				right: document.querySelector('.bump__ovo--right')
+			},
+			flashScreen: document.querySelector('.bump__flashScreen')
+		},
+		texture: {
+			ovo: {
+				move: document.querySelector('.texture__ovo--moveable'),
+				static: document.querySelector('.texture__ovo--static')
+			}
+		},
+		touch: {
+			ovo: {
+				left: document.querySelector('.touch__ovo--left'),
+				right: document.querySelector('.touch__ovo--right')
+			}
+		},
+		warm: {
+			ovo: {
+				left: document.querySelector('.warming__ovo--left'),
+				right: document.querySelector('.warming__ovo--right')
+			},
+			heat: {
+				left: document.querySelector('.warming__heat--left'),
+				right: document.querySelector('.warming__heat--right')
+			}
+		}
+	},
+	bump = interactions.bump,
+	texture = interactions.texture,
+	touch = interactions.touch,
+	warm = interactions.warm,
+	features = {
+		one: document.querySelector('.feature--1'),
+		two: document.querySelector('.feature--2'),
+		three: document.querySelector('.feature--3'),
+		four: document.querySelector('.feature--4')
+	},
+	slider = {
+		section: document.querySelector('.section--details'),
+		container: document.querySelector('.details__container'),
+		closeBtn: document.querySelector('.details__close'),
+		panels: document.querySelectorAll('.details__panel'),
+		panelsBg: document.querySelectorAll('.panel__background'),
+		panelsCnt: document.querySelectorAll('.panel__content')
+	},
+	// old vars
+	feature = document.querySelectorAll('.feature'),
 	ft1 = document.querySelector('.feature--1'),
 	ft2 = document.querySelector('.feature--2'),
 	ft3 = document.querySelector('.feature--3'),
@@ -11,24 +61,24 @@ var features = document.querySelectorAll('.feature'),
 	panels = document.querySelectorAll('.details__panel'),
 	panelsBackground = document.querySelectorAll('.panel__background'),
 	panelsContent = document.querySelectorAll('.panel__content'),
-	hands = document.querySelectorAll('.hand'),
-	paf = document.querySelector('.paf'),
+	hands = document.querySelectorAll('.bump__ovo'),
+	paf = document.querySelector('.bump__flashScreen'),
 	ovoTexMove = document.querySelector('.texture__ovo--moveable'),
-	ovoTexStatic = document.querySelector('.texture__ovo--static')
+	ovoTexStatic = document.querySelector('.texture__ovo--static'),
 	ovo = {
-		texture : {
-			move : document.querySelector('.texture__ovo--moveable'),
-			static : document.querySelector('.texture__ovo--static')
+		texture: {
+			move: document.querySelector('.texture__ovo--moveable'),
+			static: document.querySelector('.texture__ovo--static')
 		},
-		touch : {
-			left : document.querySelector('.touch__ovo--left'),
-			right : document.querySelector('.touch__ovo--right')
+		touch: {
+			left: document.querySelector('.touch__ovo--left'),
+			right: document.querySelector('.touch__ovo--right')
 		},
-		warming : {
-			left : document.querySelector('.warming__ovo--left'),
-			right : document.querySelector('.warming__ovo--right'),
-			heatLeft : document.querySelector('.warming__heat--left'),
-			heatRight : document.querySelector('.warming__heat--right')
+		warming: {
+			left: document.querySelector('.warming__ovo--left'),
+			right: document.querySelector('.warming__ovo--right'),
+			heatLeft: document.querySelector('.warming__heat--left'),
+			heatRight: document.querySelector('.warming__heat--right')
 		}
 	};
 
@@ -48,7 +98,7 @@ function shrink() {
 	}
 };
 
-features[0].addEventListener('click', function() {
+feature[0].addEventListener('click', function() {
 	setSliderOffset('set', 0);
 	slider.classList.remove('inexistent', 'transparent');
 	setTimeout(function() {
@@ -58,7 +108,7 @@ features[0].addEventListener('click', function() {
 
 	}, 1);
 });
-features[1].addEventListener('click', function() {
+feature[1].addEventListener('click', function() {
 	setSliderOffset('set', 1);
 	slider.classList.remove('inexistent', 'transparent');
 	setTimeout(function() {
@@ -67,7 +117,7 @@ features[1].addEventListener('click', function() {
 		document.body.style.overflow = "hidden";
 	}, 1);
 });
-features[2].addEventListener('click', function() {
+feature[2].addEventListener('click', function() {
 	setSliderOffset('set', 2);
 	slider.classList.remove('inexistent', 'transparent');
 	setTimeout(function() {
@@ -76,7 +126,7 @@ features[2].addEventListener('click', function() {
 		document.body.style.overflow = "hidden";
 	}, 1);
 });
-features[3].addEventListener('click', function() {
+feature[3].addEventListener('click', function() {
 	setSliderOffset('set', 3);
 	slider.classList.remove('inexistent', 'transparent');
 	setTimeout(function() {
@@ -97,7 +147,7 @@ sliderClose.addEventListener('click', function() {
 
 
 // REMOVE LATER
-setSliderOffset('set',3);
+// setSliderOffset('set',3);
 
 
 
@@ -188,11 +238,11 @@ hri.on('panend', function() {
 });
 
 
-var draggable = new Draggabilly(ovoTexMove,{
+var draggable = new Draggabilly(ovoTexMove, {
 
 });
 
-draggable.on('pointerDown', function(){
+draggable.on('pointerDown', function() {
 	// ovoTexMove.style.transform = 'scale(1.5)';
 	ovoTexMove.classList.add('scaleUp');
 });
@@ -200,42 +250,42 @@ draggable.on('pointerDown', function(){
 // 	ovoTexMove.style.transform = 'scale(1.5)';
 // });
 
-draggable.on('dragEnd', function(){
-	var endPointX = draggable.position.x + ovoTexMove.clientWidth/2,
-		endPointY = draggable.position.y + ovoTexMove.clientHeight/2;
+draggable.on('dragEnd', function() {
+	var endPointX = draggable.position.x + ovoTexMove.clientWidth / 2,
+		endPointY = draggable.position.y + ovoTexMove.clientHeight / 2;
 	// console.log(endPointY);
-	console.log(window.innerHeight - window.innerWidth/4);
-	if (endPointY > window.innerHeight - window.innerWidth/4) {
-		if(endPointX > window.innerWidth*0.75){
+	console.log(window.innerHeight - window.innerWidth / 4);
+	if(endPointY > window.innerHeight - window.innerWidth / 4) {
+		if(endPointX > window.innerWidth * 0.75) {
 			ovoTexStatic.style.background = 'green';
-		}else{
-			if(endPointX > window.innerWidth/2){
+		} else {
+			if(endPointX > window.innerWidth / 2) {
 				ovoTexStatic.style.background = 'blue';
-			}else{
-				if(endPointX > window.innerWidth*0.25){
+			} else {
+				if(endPointX > window.innerWidth * 0.25) {
 					ovoTexStatic.style.background = 'red';
-				}else{
+				} else {
 					ovoTexStatic.style.background = 'bisque';
 				}
 			}
 		}
-	}else{
+	} else {
 		ovoTexStatic.style.background = 'bisque';
 	}
 })
 
 // touch
 
-ovo.touch.left.addEventListener('touchstart', function(){
+ovo.touch.left.addEventListener('touchstart', function() {
 	ovo.touch.right.classList.add('wiggle');
 })
-ovo.touch.left.addEventListener('touchend', function(){
+ovo.touch.left.addEventListener('touchend', function() {
 	ovo.touch.right.classList.remove('wiggle');
 })
-ovo.touch.right.addEventListener('touchstart', function(){
+ovo.touch.right.addEventListener('touchstart', function() {
 	ovo.touch.left.classList.add('wiggle');
 })
-ovo.touch.right.addEventListener('touchend', function(){
+ovo.touch.right.addEventListener('touchend', function() {
 	ovo.touch.left.classList.remove('wiggle');
 })
 
@@ -254,23 +304,23 @@ warmRightInteraction.add(new Hammer.Pan({
 	pointers: 1
 }))
 var heat = {
-	left : 0,
-	right : 0
+	left: 0,
+	right: 0
 }
-warmRightInteraction.on('pan', function(){
-	if(heat.left < 1){
+warmRightInteraction.on('pan', function() {
+	if(heat.left < 1) {
 		heat.left += 0.008;
 		ovo.warming.heatRight.style.opacity = heat.left;
 	}
 })
-warmLeftInteraction.on('pan', function(){
-	if(heat.right < 1){
+warmLeftInteraction.on('pan', function() {
+	if(heat.right < 1) {
 		heat.right += 0.008;
 		ovo.warming.heatLeft.style.opacity = heat.right;
 	}
 })
 
-function colden(){
+function colden() {
 	heat.left -= 0.003
 	heat.right -= 0.003
 	ovo.warming.heatRight.style.opacity = heat.right;
@@ -279,7 +329,7 @@ function colden(){
 
 var timer = 0;
 var currentTime,
-	last = 0,
+	lastTime = 0,
 	elapsed = 0;
 
 function clock() {

@@ -9,6 +9,8 @@ body {
 	scroll-snap-type            : mandatory;
 }
 
+/* SCREENS */
+
 .section {
 	width : 100vw;
 	height: 100vh;
@@ -27,6 +29,8 @@ body {
 }
 
 .section--features {}
+
+/* FEATURES SCREEN */
 
 .feature {
 	width : 50%;
@@ -49,6 +53,8 @@ body {
 .feature--4 {
 	background: #ff9800;
 }
+
+/* INTERACTION SCREENS */
 
 .section--details {
 	width     : 100vw;
@@ -162,7 +168,7 @@ body {
 
 /*PANELS CONTENTS*/
 /* bumping */
-.hand {
+.bump__ovo {
 	position         : absolute;
 	top              : 50%;
 	-webkit-transform: translateY(-50%);
@@ -172,15 +178,15 @@ body {
 	background       : #fff;
 }
 
-.hand.hand--left {
+.bump__ovo.bump__ovo--left {
 	left: -90%;
 }
 
-.hand.hand--right {
+.bump__ovo.bump__ovo--right {
 	right: -90%;
 }
 
-.paf {
+.bump__flashScreen {
 	position  : absolute;
 	top       : 0;
 	left      : 0;

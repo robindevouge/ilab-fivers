@@ -150,7 +150,6 @@ hri.add(new Hammer.Pan({
 	pointers: 1
 }));
 hri.on('pan', function(e) {
-	console.log(e.deltaX);
 	hands[1].style.transform = 'translateX(' + e.deltaX + 'px) translateY(-50%)';
 });
 hri.on('panend', function() {

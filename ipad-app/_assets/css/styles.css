@@ -191,7 +191,7 @@ body {
 }
 
 /* texture */
-.ovo {
+.texture__ovo {
 	position  : absolute;
 
 	width     : 150px;
@@ -199,17 +199,17 @@ body {
 	background: bisque;
 }
 
-.ovo--static {
+.texture__ovo--static {
 	left: calc(50% - 75px);
 	top : 100px;
 }
 
-.ovo--moveable {
+.texture__ovo--moveable {
 	top: 70%;
 	left: 100px;
 }
 
-.ovo--moveable::after {
+.texture__ovo--moveable::after {
 	display: block;
 	content: '';
 	width: 50px;
@@ -218,7 +218,7 @@ body {
 	transition: transform .1s;
 }
 
-.ovo.is-pointer-down::after {
+.texture__ovo.is-pointer-down::after {
 	transform: scale(1.5);
 }
 
@@ -243,4 +243,37 @@ body {
 .texture--3 {
 	background: green;
 	left      : 75%;
+}
+
+/* touch */
+
+.touch__ovo {
+	width: 150px;
+	height: 200px;
+	background: lightblue;
+	position: absolute;
+	top: 40%;
+	left: calc(355px + 10px);
+	transform: translateX(-10px);
+}
+
+.touch__ovo--right {
+	left: auto;
+	right: calc(355px - 10px);
+}
+
+.touch__ovo.wiggle {
+	animation: wiggle .1s infinite;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: translateX(-10px);
+	}
+	50% {
+		transform: translateX(10px);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
 }

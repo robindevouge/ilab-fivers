@@ -8,7 +8,8 @@
 		<meta charset="UTF-8"/>
 		<meta name="author" content="Fivers - iLab group">
 
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
 
 		<!-- Google -->
 		<meta name="description" content=""/>
@@ -35,22 +36,91 @@
 
 	<body>
 
-		<section class="section section--1"></section>
-		<section class="section section--2"></section>
-		<section class="section section--3"></section>
-		<section class="section section--features">
-			<div class="feature feature--1"></div>
-			<div class="feature feature--2"></div>
-			<div class="feature feature--3"></div>
-			<div class="feature feature--4"></div>
+		<section class="section section--header">
+			<h1 class="header__title">OVO</h1>
+			<h2 class="header__subtitle">Restez en contact avec vos proches</h2>
 		</section>
 		<section class="section section--details">
-			<div class="details__container">
-				<div class="details__panel details__panel--1"></div>
-				<div class="details__panel details__panel--2"></div>
-				<div class="details__panel details__panel--3"></div>
-				<div class="details__panel details__panel--4"></div>
+			<p class="details__txt">Vous n’avez jamais rêvé de pouvoir tenir la main de votre moitié, un soir de solitude ? Voulu être plus présent pour votre grand-mère qui passe ses journées seule chez elle? De partager un peu de chaleur humaine les jours où ça n’allait pas fort ?</p>
+			<p class="details__txt">OVO est bientôt là pour vous. OVO, c’est une toute nouvelle manière de communiquer, de maintenir un lien physique avec vos proches.</p>
+			<p class="details__txt">Pression, texture, chaleur, communiquez à distance par le toucher.</p>
+			<p class="details__txt">Découvrez ce que peut faire OVO</p>
+		</section>
+		<section class="section section--features">
+			<div class="feature feature--1">
+				<h3 class="feature__title">Connecter son OVO</h3>
+				<p class="feature__txt">Aussi simple qu'un câlin</p>
 			</div>
+			<div class="feature feature--2">
+				<h3 class="feature__title">Transmettre une texture</h3>
+				<p class="feature__txt">Pour un moment de douceur</p>
+			</div>
+			<div class="feature feature--3">
+				<h3 class="feature__title">Le langage haptique</h3>
+				<p class="feature__txt">Pour communiquer</p>
+			</div>
+			<div class="feature feature--4">
+				<h3 class="feature__title">Transmettre la chaleur</h3>
+				<p class="feature__txt">Lorsqu'il fait froid</p>
+			</div>
+		</section>
+		<section class="section section--interactions inexistent transparent">
+			<div class="interactions__container">
+				<div class="interactions__panel interactions__panel--1">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<circle class="panel__background panel__background--1"></circle>
+					</svg>
+					<div class="panel__content">
+						<div class="bump__flashScreen"></div>
+						<h3 class="panel__title">Connecter son OVO</h3>
+						<p class="panel__txt">Il suffit de se faire toucher deux OVO pour qu'ils soient reliés.</p>
+						<div class="bump__ovo bump__ovo--left"></div>
+						<div class="bump__ovo bump__ovo--right"></div>
+					</div>
+				</div>
+				<div class="interactions__panel interactions__panel--2">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<circle class="panel__background panel__background--2"></circle>
+					</svg>
+					<div class="panel__content">
+
+						<h3 class="panel__title">Transmettre une texture</h3>
+						<p class="panel__txt">Posez votre OVO sur un objet pour transmettre instantanément sa texture à son double</p>
+						<div class="texture__ovo texture__ovo--static"></div>
+						<div class="texture texture--1"></div>
+						<div class="texture texture--2"></div>
+						<div class="texture texture--3"></div>
+						<div class="texture__ovo texture__ovo--moveable"></div>
+
+					</div>
+
+				</div>
+				<div class="interactions__panel interactions__panel--3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<circle class="panel__background panel__background--3"></circle>
+					</svg>
+					<div class="panel__content">
+						<h3 class="panel__title">Le langage haptique</h3>
+						<p class="panel__txt">Lorsque vous manipulez votre OVO, son double réagit à l'identique. C'est comme si vous teniez la main à votre partenaire.</p>
+						<div class="touch__ovo touch__ovo--left"></div>
+						<div class="touch__ovo touch__ovo--right"></div>
+					</div>
+
+				</div>
+				<div class="interactions__panel interactions__panel--4">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+						<circle class="panel__background panel__background--4"></circle>
+					</svg>
+					<div class="panel__content">
+						<h3 class="panel__title">Transmettre la chaleur</h3>
+						<p class="panel__txt">Un léger frisson ? Les mains froides ? Votre partenaire peut vous réchauffer simplement en chauffant son OVO.</p>
+						<div class="warming__ovo warming__ovo--left"><div class="warming__heat warming__heat--left"></div></div>
+						<div class="warming__ovo warming__ovo--right"><div class="warming__heat warming__heat--right"></div></div>
+					</div>
+
+				</div>
+			</div>
+			<button class="interactions__close">close</button>
 		</section>
 
 		<!--
@@ -62,6 +132,9 @@
 	</script>
 	-->
 		<script src="_assets/js/hammer.min.js"></script>
+		<script src="_assets/js/hammer-time.min.js"></script>
+		<script src="_assets/js/anime.min.js"></script>
+		<script src="_assets/js/draggabilly.min.js"></script>
 		<script src="_assets/js/main.js"></script>
 
 	</body>

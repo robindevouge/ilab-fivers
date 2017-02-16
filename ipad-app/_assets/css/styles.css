@@ -1,28 +1,32 @@
 @import url( './reset.css');
 
 body {
-	width : 100%;
-	height: 100%;
+	width                       : 100%;
+	height                      : 100%;
+	-webkit-scroll-snap-points-y: repeat(100%);
+	scroll-snap-points-y        : repeat(100%);
+	-webkit-scroll-snap-type    : mandatory;
+	scroll-snap-type            : mandatory;
 }
+
+/* SCREENS */
 
 .section {
 	width : 100vw;
 	height: 100vh;
 }
 
-.section--1 {
+.section--header {
 	background: #f44336;
 }
 
-.section--2 {
+.section--details {
 	background: #2196f3;
 }
 
-.section--3 {
-	background: #4caf50;
-}
-
 .section--features {}
+
+/* FEATURES SCREEN */
 
 .feature {
 	width : 50%;
@@ -46,20 +50,28 @@ body {
 	background: #ff9800;
 }
 
-.section--details {
+/* INTERACTION SCREENS */
+
+.section--interactions {
 	width     : 100vw;
 	overflow-x: hidden;
 	position  : fixed;
 	top       : 0;
 	left      : 0;
-	display   : none;
+	opacity   : 1;
 }
 
-.section--details.visible {
-	display: block;
+.section--interactions.transparent {
+	opacity           : 0;
+	-webkit-transition: opacity .3s;
+	transition        : opacity .3s;
 }
 
-.details__container {
+.section--interactions.inexistent {
+	display: none;
+}
+
+.interactions__container {
 	width   : 400vw;
 	height  : 100%;
 	position: relative;
@@ -68,7 +80,13 @@ body {
 	/*transition: left .3s;*/
 }
 
-.details__panel {
+.interactions__close {
+	position: absolute;
+	top     : 20px;
+	right   : 20px;
+}
+
+.interactions__panel {
 	position  : absolute;
 	top       : 0;
 	width     : 100vw;
@@ -77,50 +95,222 @@ body {
 	overflow-x: hidden;
 }
 
-.details__panel--1 {
-	left      : 0;
-	background: #f44336;
+.interactions__panel--1 {
+	left: 0;
+}
+
+.interactions__panel--2 {
+	left: 25%;
+}
+
+.interactions__panel--3 {
+	left: 50%;
+}
+
+.interactions__panel--4 {
+	left: 75%;
+}
+
+.panel__background {
+	r: 1px;
+}
+
+.spread {
+	r         : 110%;
+	transition: r .3s;
+}
+
+.panel__background--1 {
+	fill: #80F9B7;
+	cx  : 25%;
+	cy  : 25%;
 	/*background: red;*/
-	clip-path : circle(100px at 25% 25%);
 }
 
-.details__panel--1.clip-full {
-	clip-path : circle(1200px at 25% 25%);
-	transition: clip-path .3s;
-}
-
-.details__panel--2 {
-	left      : 25%;
-	background: #2196f3;
+.panel__background--2 {
+	fill: #2196f3;
+	cx  : 75%;
+	cy  : 25%;
 	/*background: blue;*/
-	clip-path : circle(100px at 75% 25%);
 }
 
-.details__panel--2.clip-full {
-	clip-path : circle(1200px at 75% 25%);
-	transition: clip-path .3s;
-}
-
-.details__panel--3 {
-	left      : 50%;
-	background: #4caf50;
+.panel__background--3 {
+	fill: #4caf50;
+	cx  : 25%;
+	cy  : 75%;
 	/*background: green;*/
-	clip-path : circle(100px at 25% 75%);
 }
 
-.details__panel--3.clip-full {
-	clip-path : circle(1200px at 25% 75%);
-	transition: clip-path .3s;
-}
-
-.details__panel--4 {
-	left      : 75%;
-	background: #ff9800;
+.panel__background--4 {
+	fill: #ff9800;
+	cx  : 75%;
+	cy  : 75%;
 	/*background: orange;*/
-	clip-path : circle(100px at 75% 75%);
 }
 
-.details__panel--4.clip-full {
-	clip-path : circle(1200px at 75% 75%);
-	transition: clip-path .3s;
+.panel__content {
+	width   : 100%;
+	height  : 100%;
+	position: absolute;
+	top     : 0;
+	bottom  : 0;
+	opacity : 0;
+}
+
+.panel__content.appear {
+	opacity   : 1;
+	transition: opacity .3s .15s;
+}
+
+/*PANELS CONTENTS*/
+/* bumping */
+.bump__ovo {
+	position         : absolute;
+	top              : 50%;
+	-webkit-transform: translateY(-50%);
+	transform        : translateY(-50%);
+	width            : 300px;
+	height           : 255px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	/*background       : #fff;*/
+}
+
+.bump__ovo--left {
+	left: 0;
+	background-image: url('../img/03_bumb-left-initial.png');
+}
+.bump__ovo--left.bumped {
+	background-image: url('../img/03_bumb-left-active.png');
+}
+.bump__ovo--right {
+	top: 57%;
+	right: 0;
+	background-image: url('../img/03_bumb-right-initial.png');
+}
+.bump__ovo--right.bumped {
+	background-image: url('../img/03_bumb-right-active.png');
+}
+
+
+.bump__flashScreen {
+	position  : absolute;
+	top       : 0;
+	left      : 0;
+	width     : 100%;
+	height    : 100%;
+	background: #e0f2f1;
+	/*background: red;*/
+	opacity   : 0;
+}
+
+/* texture */
+.texture__ovo {
+	position  : absolute;
+
+	width     : 150px;
+	height    : 150px;
+	background: bisque;
+}
+
+.texture__ovo--static {
+	left: calc(50% - 75px);
+	top : 100px;
+}
+
+.texture__ovo--moveable {
+	top: 70%;
+	left: 100px;
+}
+
+.texture__ovo--moveable::after {
+	display: block;
+	content: '';
+	width: 50px;
+	height: 50px;
+	background: red;
+	transition: transform .1s;
+}
+
+.texture__ovo.is-pointer-down::after {
+	transform: scale(1.5);
+}
+
+.texture {
+	position  : absolute;
+	bottom    : 0;
+	left      : 0;
+	width     : 25%;
+	height    : 25vw;
+	background: red;
+}
+
+.texture--1 {
+	left: 25%;
+}
+
+.texture--2 {
+	background: blue;
+	left      : 50%;
+}
+
+.texture--3 {
+	background: green;
+	left      : 75%;
+}
+
+/* touch */
+
+.touch__ovo {
+	width: 150px;
+	height: 200px;
+	background: lightblue;
+	position: absolute;
+	top: 40%;
+	left: calc(355px + 10px);
+	transform: translateX(-10px);
+}
+
+.touch__ovo--right {
+	left: auto;
+	right: calc(355px - 10px);
+}
+
+.touch__ovo.wiggle {
+	animation: wiggle .1s infinite;
+}
+
+.warming__ovo {
+	width: 150px;
+	height: 200px;
+	background: lightblue;
+	position: absolute;
+	top: 40%;
+	left: calc(355px + 10px);
+	transform: translateX(-10px);
+}
+
+.warming__ovo--right {
+	left: auto;
+	right: calc(355px - 10px);
+}
+
+.warming__heat {
+	/*position: absolute;*/
+	width: 100%;
+	height: 100%;
+	background: red;
+	opacity: 0;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: translateX(-10px);
+	}
+	50% {
+		transform: translateX(10px);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
 }

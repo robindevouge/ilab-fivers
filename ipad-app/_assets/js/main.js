@@ -101,10 +101,10 @@ var interactions = {
 	features = document.querySelectorAll('.feature'),
 	slider = {
 		offset: 0,
-		section: document.querySelector('.section--details'),
-		container: document.querySelector('.details__container'),
-		closeBtn: document.querySelector('.details__close'),
-		panels: document.querySelectorAll('.details__panel'),
+		section: document.querySelector('.section--interactions'),
+		container: document.querySelector('.interactions__container'),
+		closeBtn: document.querySelector('.interactions__close'),
+		panels: document.querySelectorAll('.interactions__panel'),
 		panelsBg: document.querySelectorAll('.panel__background'),
 		panelsCnt: document.querySelectorAll('.panel__content'),
 		spread: function() {

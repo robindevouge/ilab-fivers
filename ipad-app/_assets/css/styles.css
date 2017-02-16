@@ -16,16 +16,12 @@ body {
 	height: 100vh;
 }
 
-.section--1 {
+.section--header {
 	background: #f44336;
 }
 
-.section--2 {
+.section--details {
 	background: #2196f3;
-}
-
-.section--3 {
-	background: #4caf50;
 }
 
 .section--features {}
@@ -56,7 +52,7 @@ body {
 
 /* INTERACTION SCREENS */
 
-.section--details {
+.section--interactions {
 	width     : 100vw;
 	overflow-x: hidden;
 	position  : fixed;
@@ -65,17 +61,17 @@ body {
 	opacity   : 1;
 }
 
-.section--details.transparent {
+.section--interactions.transparent {
 	opacity           : 0;
 	-webkit-transition: opacity .3s;
 	transition        : opacity .3s;
 }
 
-.section--details.inexistent {
+.section--interactions.inexistent {
 	display: none;
 }
 
-.details__container {
+.interactions__container {
 	width   : 400vw;
 	height  : 100%;
 	position: relative;
@@ -84,13 +80,13 @@ body {
 	/*transition: left .3s;*/
 }
 
-.details__close {
+.interactions__close {
 	position: absolute;
 	top     : 20px;
 	right   : 20px;
 }
 
-.details__panel {
+.interactions__panel {
 	position  : absolute;
 	top       : 0;
 	width     : 100vw;
@@ -99,19 +95,19 @@ body {
 	overflow-x: hidden;
 }
 
-.details__panel--1 {
+.interactions__panel--1 {
 	left: 0;
 }
 
-.details__panel--2 {
+.interactions__panel--2 {
 	left: 25%;
 }
 
-.details__panel--3 {
+.interactions__panel--3 {
 	left: 50%;
 }
 
-.details__panel--4 {
+.interactions__panel--4 {
 	left: 75%;
 }
 

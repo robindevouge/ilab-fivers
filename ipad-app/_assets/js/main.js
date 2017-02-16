@@ -32,25 +32,31 @@ var interactions = {
 				var rightHandPos = this.ovo.right.getBoundingClientRect().left;
 
 				if(hasClass(slider.panelsCnt[0], "appear") && leftHandPos >= rightHandPos) { // means the 2 blocks are overlaping
+					this.ovo.left.classList.add('bumped');
+					this.ovo.right.classList.add('bumped');
 					if(!this.finished) {
 
 						this.timer += elapsed;
 
 						var progress = this.timer / t;
 
-						bump.flashScreen.style.opacity = progress;
+						console.log(progress);
+
+						this.flashScreen.style.opacity = progress;
 
 						if(this.timer >= t) {
 							this.finished = true;
 							this.timer = 0;
-							this.flashScreen.style.background = "blue"
+							this.flashScreen.style.background = "#81c784"
 						}
 					}
 				} else {
 					this.timer = 0;
 					this.finished = false;
 					this.flashScreen.style.opacity = 0;
-					this.flashScreen.style.background = "lightblue"
+					this.flashScreen.style.background = "#e0f2f1";
+					this.ovo.left.classList.remove('bumped');
+					this.ovo.right.classList.remove('bumped');
 				}
 			}
 		},
@@ -148,8 +154,8 @@ function hasClass(elem, klass) {
 
 // FEATURES OPENING/CLOSING
 
-for(var i = 0; i < fts.length; i++) {
-	fts[i].addEventListener('click', function(e) {
+for(var i = 0; i < features.length; i++) {
+	features[i].addEventListener('click', function(e) {
 		var offset = e.target.classList[1].slice(-1) - 1;
 		slider.setOffset('set', offset);
 		slider.section.classList.remove('inexistent', 'transparent');

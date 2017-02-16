@@ -1,4 +1,22 @@
 // 1366 * 1024
+// REMOVE LATER : this is to open directly a panel on load
+// setSliderOffset('set',3);
+
+var clock = {
+	currentTime: 0,
+	lastTime: 0,
+	elapsedTime: 0,
+	run: function() {
+		this.currentTime = new Date().getTime();
+		this.elapsedTime = (this.currentTime - this.lastTime) / 1000; //unit in secs
+
+		bump.collisionTimer(1.5, this.elapsedTime);
+		warm.coolDown();
+
+		this.lastTime = this.currentTime;
+		requestAnimationFrame(clock.run)
+	}
+}
 
 var interactions = {
 		bump: {
@@ -6,7 +24,35 @@ var interactions = {
 				left: document.querySelector('.bump__ovo--left'),
 				right: document.querySelector('.bump__ovo--right')
 			},
-			flashScreen: document.querySelector('.bump__flashScreen')
+			flashScreen: document.querySelector('.bump__flashScreen'),
+			timer: 0,
+			finished: false,
+			collisionTimer: function(t, elapsed) {
+				var leftHandPos = this.ovo.left.getBoundingClientRect().right;
+				var rightHandPos = this.ovo.right.getBoundingClientRect().left;
+
+				if(hasClass(slider.panelsCnt[0], "appear") && leftHandPos >= rightHandPos) { // means the 2 blocks are overlaping
+					if(!this.finished) {
+
+						this.timer += elapsed;
+
+						var progress = this.timer / t;
+
+						bump.flashScreen.style.opacity = progress;
+
+						if(this.timer >= t) {
+							this.finished = true;
+							this.timer = 0;
+							this.flashScreen.style.background = "blue"
+						}
+					}
+				} else {
+					this.timer = 0;
+					this.finished = false;
+					this.flashScreen.style.opacity = 0;
+					this.flashScreen.style.background = "lightblue"
+				}
+			}
 		},
 		texture: {
 			ovo: {
@@ -28,6 +74,23 @@ var interactions = {
 			heat: {
 				left: document.querySelector('.warming__heat--left'),
 				right: document.querySelector('.warming__heat--right')
+			},
+			temp: {
+				left: 0,
+				right: 0
+			},
+			coolDown: function() {
+				if(this.temp.left >= 0) {
+					this.temp.left -= 0.003;
+					this.heat.left.style.opacity = this.temp.left;
+				}
+				if(this.temp.right >= 0) {
+					this.temp.right -= 0.003;
+					this.heat.right.style.opacity = this.temp.right;
+				}
+
+
+
 			}
 		}
 	},
@@ -35,180 +98,106 @@ var interactions = {
 	texture = interactions.texture,
 	touch = interactions.touch,
 	warm = interactions.warm,
-	features = {
-		one: document.querySelector('.feature--1'),
-		two: document.querySelector('.feature--2'),
-		three: document.querySelector('.feature--3'),
-		four: document.querySelector('.feature--4')
-	},
+	features = document.querySelectorAll('.feature'),
 	slider = {
+		offset: 0,
 		section: document.querySelector('.section--details'),
 		container: document.querySelector('.details__container'),
 		closeBtn: document.querySelector('.details__close'),
 		panels: document.querySelectorAll('.details__panel'),
 		panelsBg: document.querySelectorAll('.panel__background'),
-		panelsCnt: document.querySelectorAll('.panel__content')
-	},
-	// old vars
-	feature = document.querySelectorAll('.feature'),
-	ft1 = document.querySelector('.feature--1'),
-	ft2 = document.querySelector('.feature--2'),
-	ft3 = document.querySelector('.feature--3'),
-	ft4 = document.querySelector('.feature--4'),
-	slider = document.querySelector('.section--details'),
-	sliderClose = document.querySelector('.details__close'),
-	sliderContainer = document.querySelector('.details__container'),
-	panels = document.querySelectorAll('.details__panel'),
-	panelsBackground = document.querySelectorAll('.panel__background'),
-	panelsContent = document.querySelectorAll('.panel__content'),
-	hands = document.querySelectorAll('.bump__ovo'),
-	paf = document.querySelector('.bump__flashScreen'),
-	ovoTexMove = document.querySelector('.texture__ovo--moveable'),
-	ovoTexStatic = document.querySelector('.texture__ovo--static'),
-	ovo = {
-		texture: {
-			move: document.querySelector('.texture__ovo--moveable'),
-			static: document.querySelector('.texture__ovo--static')
+		panelsCnt: document.querySelectorAll('.panel__content'),
+		spread: function() {
+			for(var i = 0; i < this.panels.length; i++) {
+				this.panelsBg[i].classList.add('spread');
+				this.panelsCnt[i].classList.add('appear');
+			}
 		},
-		touch: {
-			left: document.querySelector('.touch__ovo--left'),
-			right: document.querySelector('.touch__ovo--right')
+		shrink: function() {
+			for(var i = 0; i < this.panels.length; i++) {
+				this.panelsBg[i].classList.remove('spread')
+				this.panelsCnt[i].classList.remove('appear')
+			}
 		},
-		warming: {
-			left: document.querySelector('.warming__ovo--left'),
-			right: document.querySelector('.warming__ovo--right'),
-			heatLeft: document.querySelector('.warming__heat--left'),
-			heatRight: document.querySelector('.warming__heat--right')
+		setOffset: function(action, offset) {
+			switch(action) {
+				case 'set':
+					slider.offset = offset;
+					slider.container.style.transition = "none";
+					break;
+				case 'increment':
+					slider.offset += offset;
+					switch(slider.offset) {
+						case -1:
+							slider.offset = 0;
+							break;
+						case 4:
+							slider.offset = 3;
+							break;
+					}
+					slider.container.style.transition = 'left .3s';
+					break;
+			}
+			slider.container.style.left = -100 * slider.offset + 'vw';
 		}
-	};
-
-// feature touch
-
-function spread() {
-	for(var i = 0; i < panels.length; i++) {
-		panelsBackground[i].classList.add('spread');
-		panelsContent[i].classList.add('appear');
 	}
-};
 
-function shrink() {
-	for(var i = 0; i < panels.length; i++) {
-		panelsBackground[i].classList.remove('spread')
-		panelsContent[i].classList.remove('appear')
-	}
-};
+function hasClass(elem, klass) {
+	return(" " + elem.className + " ").indexOf(" " + klass + " ") > -1;
+}
 
-feature[0].addEventListener('click', function() {
-	setSliderOffset('set', 0);
-	slider.classList.remove('inexistent', 'transparent');
-	setTimeout(function() {
-		spread();
-		window.scrollTo(0, document.body.scrollHeight);
-		document.body.style.overflow = "hidden";
+// FEATURES OPENING/CLOSING
 
-	}, 1);
-});
-feature[1].addEventListener('click', function() {
-	setSliderOffset('set', 1);
-	slider.classList.remove('inexistent', 'transparent');
-	setTimeout(function() {
-		spread();
-		window.scrollTo(0, document.body.scrollHeight);
-		document.body.style.overflow = "hidden";
-	}, 1);
-});
-feature[2].addEventListener('click', function() {
-	setSliderOffset('set', 2);
-	slider.classList.remove('inexistent', 'transparent');
-	setTimeout(function() {
-		spread();
-		window.scrollTo(0, document.body.scrollHeight);
-		document.body.style.overflow = "hidden";
-	}, 1);
-});
-feature[3].addEventListener('click', function() {
-	setSliderOffset('set', 3);
-	slider.classList.remove('inexistent', 'transparent');
-	setTimeout(function() {
-		spread();
-		window.scrollTo(0, document.body.scrollHeight);
-		document.body.style.overflow = "hidden";
-	}, 1);
-});
+for(var i = 0; i < fts.length; i++) {
+	fts[i].addEventListener('click', function(e) {
+		var offset = e.target.classList[1].slice(-1) - 1;
+		slider.setOffset('set', offset);
+		slider.section.classList.remove('inexistent', 'transparent');
+		setTimeout(function() {
+			slider.spread();
+			window.scrollTo(0, document.body.scrollHeight);
+			document.body.style.overflow = "hidden";
 
-sliderClose.addEventListener('click', function() {
-	slider.classList.add('transparent');
+		}, 1);
+	});
+}
+
+slider.closeBtn.addEventListener('click', function() {
+	slider.section.classList.add('transparent');
 	document.body.style.overflow = 'auto';
 	setTimeout(function() {
-		shrink();
-		slider.classList.add('inexistent');
+		slider.shrink();
+		slider.section.classList.add('inexistent');
 	}, 300);
 });
 
-
-// REMOVE LATER
-// setSliderOffset('set',3);
-
-
-
-var sliderOffset = 0;
-
-function setSliderOffset(action, offset) {
-
-	switch(action) {
-		case 'set':
-			sliderOffset = offset;
-			sliderContainer.style.transition = "none";
-			break;
-		case 'increment':
-			sliderOffset += offset;
-
-			switch(sliderOffset) {
-				case -1:
-					sliderOffset = 0;
-					break;
-				case 4:
-					sliderOffset = 3;
-					break;
-			}
-			sliderContainer.style.transition = 'left .3s';
-			break;
-	}
-
-	sliderContainer.style.left = -100 * sliderOffset + 'vw';
-};
-
-
 // SWIPE
-var sliderInteraction = new Hammer.Manager(slider),
-	si = sliderInteraction;
-si.add(new Hammer.Swipe({
+var sliderInteraction = new Hammer.Manager(slider.section);
+sliderInteraction.add(new Hammer.Swipe({
 	direction: Hammer.DIRECTION_HORIZONTAL,
 	threshold: 200,
 	velocity: 1.7
 }));
 
-
-si.on('swipeleft', function() {
-	setSliderOffset('increment', 1);
+sliderInteraction.on('swipeleft', function() {
+	slider.setOffset('increment', 1);
 });
-si.on('swiperight', function() {
-	setSliderOffset('increment', -1);
+sliderInteraction.on('swiperight', function() {
+	slider.setOffset('increment', -1);
 });
 
-var handLeftInteraction = new Hammer.Manager(hands[0]),
-	hli = handLeftInteraction;
-hli.add(new Hammer.Pan({
+var handLeftInteraction = new Hammer.Manager(bump.ovo.left);
+handLeftInteraction.add(new Hammer.Pan({
 	direction: Hammer.DIRECTION_HORIZONTAL,
 	threshold: 1,
 	pointers: 1
 }));
-hli.on('pan', function(e) {
-	hands[0].style.transform = 'translateX(' + e.deltaX + 'px) translateY(-50%)';
+handLeftInteraction.on('pan', function(e) {
+	bump.ovo.left.style.transform = 'translateX(' + e.deltaX + 'px) translateY(-50%)';
 });
-hli.on('panend', function() {
+handLeftInteraction.on('panend', function() {
 	var myAnimation = anime({
-		targets: hands[0],
+		targets: bump.ovo.left,
 		translateX: '0',
 		translateY: '-50%',
 		duration: 300,
@@ -216,19 +205,18 @@ hli.on('panend', function() {
 		loop: false
 	});
 });
-var handRightInteraction = new Hammer.Manager(hands[1]),
-	hri = handRightInteraction;
-hri.add(new Hammer.Pan({
+var handRightInteraction = new Hammer.Manager(bump.ovo.right);
+handRightInteraction.add(new Hammer.Pan({
 	direction: Hammer.DIRECTION_HORIZONTAL,
 	threshold: 1,
 	pointers: 1
 }));
-hri.on('pan', function(e) {
-	hands[1].style.transform = 'translateX(' + e.deltaX + 'px) translateY(-50%)';
+handRightInteraction.on('pan', function(e) {
+	bump.ovo.right.style.transform = 'translateX(' + e.deltaX + 'px) translateY(-50%)';
 });
-hri.on('panend', function() {
+handRightInteraction.on('panend', function() {
 	var myAnimation = anime({
-		targets: hands[1],
+		targets: bump.ovo.right,
 		translateX: '0',
 		translateY: '-50%',
 		duration: 300,
@@ -238,66 +226,60 @@ hri.on('panend', function() {
 });
 
 
-var draggable = new Draggabilly(ovoTexMove, {
+var draggable = new Draggabilly(texture.ovo.move, {
 
 });
 
 draggable.on('pointerDown', function() {
-	// ovoTexMove.style.transform = 'scale(1.5)';
-	ovoTexMove.classList.add('scaleUp');
+	texture.ovo.move.classList.add('scaleUp');
 });
-// draggable.on('dragMove', function(){
-// 	ovoTexMove.style.transform = 'scale(1.5)';
-// });
 
 draggable.on('dragEnd', function() {
-	var endPointX = draggable.position.x + ovoTexMove.clientWidth / 2,
-		endPointY = draggable.position.y + ovoTexMove.clientHeight / 2;
-	// console.log(endPointY);
-	console.log(window.innerHeight - window.innerWidth / 4);
+	var endPointX = draggable.position.x + texture.ovo.move.clientWidth / 2,
+		endPointY = draggable.position.y + texture.ovo.move.clientHeight / 2;
 	if(endPointY > window.innerHeight - window.innerWidth / 4) {
 		if(endPointX > window.innerWidth * 0.75) {
-			ovoTexStatic.style.background = 'green';
+			texture.ovo.static.style.background = 'green';
 		} else {
 			if(endPointX > window.innerWidth / 2) {
-				ovoTexStatic.style.background = 'blue';
+				texture.ovo.static.style.background = 'blue';
 			} else {
 				if(endPointX > window.innerWidth * 0.25) {
-					ovoTexStatic.style.background = 'red';
+					texture.ovo.static.style.background = 'red';
 				} else {
-					ovoTexStatic.style.background = 'bisque';
+					texture.ovo.static.style.background = 'bisque';
 				}
 			}
 		}
 	} else {
-		ovoTexStatic.style.background = 'bisque';
+		texture.ovo.static.style.background = 'bisque';
 	}
 })
 
 // touch
 
-ovo.touch.left.addEventListener('touchstart', function() {
-	ovo.touch.right.classList.add('wiggle');
+touch.ovo.left.addEventListener('touchstart', function() {
+	touch.ovo.right.classList.add('wiggle');
 })
-ovo.touch.left.addEventListener('touchend', function() {
-	ovo.touch.right.classList.remove('wiggle');
+touch.ovo.left.addEventListener('touchend', function() {
+	touch.ovo.right.classList.remove('wiggle');
 })
-ovo.touch.right.addEventListener('touchstart', function() {
-	ovo.touch.left.classList.add('wiggle');
+touch.ovo.right.addEventListener('touchstart', function() {
+	touch.ovo.left.classList.add('wiggle');
 })
-ovo.touch.right.addEventListener('touchend', function() {
-	ovo.touch.left.classList.remove('wiggle');
+touch.ovo.right.addEventListener('touchend', function() {
+	touch.ovo.left.classList.remove('wiggle');
 })
 
 // warming
 
-var warmLeftInteraction = new Hammer.Manager(ovo.warming.left);
+var warmLeftInteraction = new Hammer.Manager(warm.ovo.left);
 warmLeftInteraction.add(new Hammer.Pan({
 	direction: Hammer.DIRECTION_ALL,
 	threshold: 1,
 	pointers: 1
 }))
-var warmRightInteraction = new Hammer.Manager(ovo.warming.right);
+var warmRightInteraction = new Hammer.Manager(warm.ovo.right);
 warmRightInteraction.add(new Hammer.Pan({
 	direction: Hammer.DIRECTION_ALL,
 	threshold: 1,
@@ -308,69 +290,27 @@ var heat = {
 	right: 0
 }
 warmRightInteraction.on('pan', function() {
-	if(heat.left < 1) {
-		heat.left += 0.008;
-		ovo.warming.heatRight.style.opacity = heat.left;
+	if(warm.temp.left < 1) {
+		warm.temp.left += 0.008;
+		warm.heat.left.style.opacity = warm.temp.left;
 	}
 })
 warmLeftInteraction.on('pan', function() {
-	if(heat.right < 1) {
-		heat.right += 0.008;
-		ovo.warming.heatLeft.style.opacity = heat.right;
+	if(warm.temp.right < 1) {
+		warm.temp.right += 0.008;
+		warm.heat.right.style.opacity = warm.temp.right;
 	}
 })
 
 function colden() {
-	heat.left -= 0.003
-	heat.right -= 0.003
-	ovo.warming.heatRight.style.opacity = heat.right;
-	ovo.warming.heatLeft.style.opacity = heat.left;
-}
-
-var timer = 0;
-var currentTime,
-	lastTime = 0,
-	elapsed = 0;
-
-function clock() {
-	currentTime = new Date().getTime();
-	// do things
-	collisionTimer(1.5);
-	colden();
-	lastTime = currentTime;
-
-	requestAnimationFrame(clock);
-}
-
-var finished = false;
-
-function collisionTimer(t) { // t = collision timeout
-
-	var leftHandPos = hands[0].getBoundingClientRect().right;
-	var rightHandPos = hands[1].getBoundingClientRect().left;
-
-	if(leftHandPos >= rightHandPos) { // means the 2 blocks are overlaping
-		if(!finished) {
-			elapsed = (currentTime - lastTime) / 1000;
-			timer += elapsed;
-
-			var progress = timer / t;
-
-			paf.style.opacity = progress;
-
-			// console.log(timer);
-			if(timer >= t) {
-				console.log('done');
-				finished = true;
-				timer = 0;
-				paf.style.background = "blue"
-			}
-		}
-	} else {
-		timer = 0;
-		finished = false;
-		paf.style.opacity = 0;
-		paf.style.background = "lightblue"
+	if(warm.heat.left >= 0) {
+		warm.heat.left -= 0.003
+		warm.ovo.right.style.opacity = warm.heat.right;
 	}
+
+	warm.heat.right -= 0.003
+
+	warm.ovo.left.style.opacity = warm.heat.left;
 }
-requestAnimationFrame(clock);
+
+requestAnimationFrame(clock.run);

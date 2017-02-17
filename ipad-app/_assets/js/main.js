@@ -246,19 +246,22 @@ draggable.on('dragEnd', function() {
 	if(endPointY > window.innerHeight - window.innerWidth / 4) {
 		if(endPointX > window.innerWidth * 0.75) {
 			texture.ovo.static.style.background = 'green';
+			texture.ovo.static.className = 'texture__ovo texture__ovo--static tx3';
 		} else {
 			if(endPointX > window.innerWidth / 2) {
 				texture.ovo.static.style.background = 'blue';
+				texture.ovo.static.className = 'texture__ovo texture__ovo--static tx2';
 			} else {
 				if(endPointX > window.innerWidth * 0.25) {
 					texture.ovo.static.style.background = 'red';
+					texture.ovo.static.className = 'texture__ovo texture__ovo--static tx1';
 				} else {
-					texture.ovo.static.style.background = 'bisque';
+					texture.ovo.static.className = 'texture__ovo texture__ovo--static';
 				}
 			}
 		}
 	} else {
-		texture.ovo.static.style.background = 'bisque';
+		texture.ovo.static.className = 'texture__ovo texture__ovo--static';
 	}
 })
 

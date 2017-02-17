@@ -104,7 +104,7 @@ var interactions = {
 	texture = interactions.texture,
 	touch = interactions.touch,
 	warm = interactions.warm,
-	features = document.querySelectorAll('.feature'),
+	features = document.querySelectorAll('.feature__touch'),
 	slider = {
 		offset: 0,
 		section: document.querySelector('.section--interactions'),
@@ -156,6 +156,7 @@ function hasClass(elem, klass) {
 
 for(var i = 0; i < features.length; i++) {
 	features[i].addEventListener('click', function(e) {
+		console.log(e.target.classList[1].slice(-1));
 		var offset = e.target.classList[1].slice(-1) - 1;
 		slider.setOffset('set', offset);
 		slider.section.classList.remove('inexistent', 'transparent');
@@ -245,15 +246,15 @@ draggable.on('dragEnd', function() {
 		endPointY = draggable.position.y + texture.ovo.move.clientHeight / 2;
 	if(endPointY > window.innerHeight - window.innerWidth / 4) {
 		if(endPointX > window.innerWidth * 0.75) {
-			texture.ovo.static.style.background = 'green';
+			// texture.ovo.static.style.background = 'green';
 			texture.ovo.static.className = 'texture__ovo texture__ovo--static tx3';
 		} else {
 			if(endPointX > window.innerWidth / 2) {
-				texture.ovo.static.style.background = 'blue';
+				// texture.ovo.static.style.background = 'blue';
 				texture.ovo.static.className = 'texture__ovo texture__ovo--static tx2';
 			} else {
 				if(endPointX > window.innerWidth * 0.25) {
-					texture.ovo.static.style.background = 'red';
+					// texture.ovo.static.style.background = 'red';
 					texture.ovo.static.className = 'texture__ovo texture__ovo--static tx1';
 				} else {
 					texture.ovo.static.className = 'texture__ovo texture__ovo--static';
@@ -272,12 +273,26 @@ touch.ovo.left.addEventListener('touchstart', function() {
 })
 touch.ovo.left.addEventListener('touchend', function() {
 	touch.ovo.right.classList.remove('wiggle');
+	setTimeout(function(){
+		touch.ovo.right.classList.add('wiggle-reverse');
+	},1)
+
+	setTimeout(function(){
+		touch.ovo.right.classList.remove('wiggle-reverse');
+	},201)
 })
 touch.ovo.right.addEventListener('touchstart', function() {
 	touch.ovo.left.classList.add('wiggle');
 })
 touch.ovo.right.addEventListener('touchend', function() {
 	touch.ovo.left.classList.remove('wiggle');
+	setTimeout(function(){
+		touch.ovo.left.classList.add('wiggle-reverse');
+	},1)
+
+	setTimeout(function(){
+		touch.ovo.left.classList.remove('wiggle-reverse');
+	},201)
 })
 
 // warming
